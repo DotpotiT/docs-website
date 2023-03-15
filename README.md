@@ -26,5 +26,10 @@ If you're new to the team, please follow these steps to get started with the doc
 1. Once your GitHub account is set up and you've been added as a collaborator to the doc-website repository, open a terminal or command prompt on your machine.
 2. Navigate to the directory where you want to store the project.
 3. Run the following command to clone the repository:
-   'git clone git@github.com:DotpotiT/docs-website.git'
- 
+   ``'git clone git@github.com:DotpotiT/docs-website.git'``
+   
+ ## Contributing
+
+1. Create a new branch with your name (e.g., dev-asif) for your changes.
+2. Commit your changes and push to the remote repository.
+3. Create a pull request for your changes to be reviewed and merged.
