@@ -1,4 +1,4 @@
-# doc-website
+# docs-website
 
 Welcome to the doc-website repository! This project is brought to you by Dotpot iT and aims to provide clear and comprehensive documentation for our projects. We highly value your contributions, so please follow the guidelines below when working on the documentation.
 
