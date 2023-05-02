@@ -20,7 +20,7 @@
 	<script defer src="assets/fontawesome/js/all.min.js"></script>
 
 	<!-- Plugins CSS -->
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css"> -->
 	<link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
 
 	<!-- Theme CSS -->
@@ -99,8 +99,8 @@
 					</li>
 
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-2-4">Clone Website</a></li>
-					<li class="nav-item"><a class="nav-link scrollto" href="#item-2-1">Client Setup</a></li>
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-2-2">API Setup</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-2-1">Client Setup</a></li>
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-2-3">Admin Setup</a></li>
 					<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-3"><span
 								class="theme-icon-holder me-2"><i class="fas fa-box"></i></span>APIs</a></li>
@@ -126,8 +126,15 @@
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-8-1">React Icons</a></li>
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-8-2">Pexels Website</a></li>
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-8-3">SVG Loader</a></li>
+
 					<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-9"><span
+								class="theme-icon-holder me-2"><i class="fas fa-book-reader"></i></span>AWS Deployment</a>
+					</li>
+					
+
+					<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-10"><span
 								class="theme-icon-holder me-2"><i class="fas fa-lightbulb"></i></span>FAQs</a></li>
+
 
 				</ul>
 
@@ -152,14 +159,18 @@
 
 								// Format the date string
 								let dateString =
-								`Last updated: ${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+									`Last updated: ${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
 
 								// Update the content of the HTML element
 								document.getElementById("date").innerHTML = dateString;
 							</script>
 						</h1>
 						<section class="docs-intro">
-							<p>Welcome to the website documentation for Dotpot IT</p>
+							<p>Welcome to the website documentation for Dotpot IT! Our website provides a range of
+								features, including a login and registration system, a job portal, a "Recent Works"
+								showcase, a blog section, a customized services ordering system, a chat app for
+								communicating with customer service representatives, and themes for users to customize
+								the website's appearance.</p>
 
 							<p>This documentation provides a comprehensive guide to the structure, functionality, and
 								features of our website. It is designed to help developers understand how the website
@@ -195,17 +206,17 @@
 						<br>
 						<div class="simplelightbox-gallery row mb-3">
 							<div class="col-12 col-md-4 mb-3">
-								<a href="assets/images/home_page.jpeg"><img class="figure-img img-fluid shadow rounded"
-										src="assets/images/home_page.jpeg" alt="" title="Dotpot Home Page" /></a>
+								<a href="assets/images/home_page.png"><img class="figure-img img-fluid shadow rounded"
+										src="assets/images/home_page.png" alt="" title="Dotpot Home Page" /></a>
 							</div>
 							<div class="col-12 col-md-4 mb-3">
-								<a href="assets/images/chat.jpeg"><img class="figure-img img-fluid shadow rounded"
-										src="assets/images/chat.jpeg" alt="" title="Dotpot Features Page" /></a>
+								<a href="assets/images/chat.png"><img class="figure-img img-fluid shadow rounded"
+										src="assets/images/chat.png" alt="" title="Dotpot Features Page" /></a>
 							</div>
 							<!--//col-->
 							<div class="col-12 col-md-4 mb-3">
-								<a href="assets/images/service.jpeg"><img class="figure-img img-fluid shadow rounded"
-										src="assets/images/service.jpeg" alt="" title="Dotpot Pricing Page" /></a>
+								<a href="assets/images/service.png"><img class="figure-img img-fluid shadow rounded"
+										src="assets/images/service.png" alt="" title="Dotpot Pricing Page" /></a>
 							</div>
 							<!--//col-->
 
@@ -222,8 +233,6 @@
 							<li><strong class="me-1">MongoDB:</strong>
 								<code>https://www.mongodb.com/docs/manual/installation
 								</code></li>
-							<li><strong class="me-1">Multer:</strong> <code>npm install --save multer
-								</code></li>
 							<li><strong class="me-1">Socket.io:</strong> <code>https://socket.io/docs/v4/
 								</code></li>
 							<li><strong class="me-1">React Vite:</strong> <code>npm create vite@latest</code></li>
@@ -231,16 +240,7 @@
 							<li><strong class="me-1">React Router DOM:</strong> <code>react-router-dom</code></li>
 							<li><strong class="me-1">Material UI:</strong> <code>npm install @mui/material
 									@emotion/react @emotion/styled</code></li>
-
-							<li><strong class="me-1">Slick-Slider:</strong> <code>import Slider from
-									"react-slick";</code></li>
-							<li><strong class="me-1">TsParticles:</strong> <code>import Particles from
-									"react-particles";</code></li>
-							<li><strong class="me-1">Axios:</strong> <code>npm install axios</code></li>
-							<li><strong class="me-1">Moment:</strong> <code>npm install --save moment-timezone</code>
-							</li>
-							<li><strong class="me-1">Slick-carousel:</strong> <code>import Slider from
-									"react-slick";</code></li>
+							<li><strong class="me-1">TsParticles:</strong> <code>npm i react-particles</code></li>
 						</ul>
 					</section>
 
@@ -250,14 +250,14 @@
 						<h2 class="section-heading">Features</h2>
 
 						<ul>
-							<li>The website provides a login and registration system for users.</li>
-							<li>The job portal section allows users to view job openings and apply for positions.</li>
-							<li>The "Recent Works" section showcases the company's recent projects.</li>
-							<li>The blog section provides informative and engaging articles for users to read and
-								subscribe to.</li>
-							<li>The website allows users to order customized services.</li>
-							<li>The chat app provides a way for users to communicate with customer service
-								representatives.</li>
+							<li>Login and registration system for users.</li>
+							<li>Job portal section for viewing job openings and applying for positions.</li>
+							<li>"Recent Works" section showcasing the company's recent projects.</li>
+							<li>Blog section with informative and engaging articles for users to read</li>
+							<li>Customized services ordering system.</li>
+							<li>Chat app for users to communicate with customer service representatives.</li>
+							<li>Themes feature for users to customize the website's appearance according to their
+								preferences.</li>
 						</ul>
 					</section>
 					<!--//section-->
@@ -310,21 +310,6 @@
 									git clone github.com:DotpotiT/website.git</code></li>
 						</ul>
 					</section>
-					<section class="docs-section" id="item-2-1">
-						<h2 class="section-heading">Client Setup</h2>
-						<ul>
-
-							<li>Start the client side by running the following command:<code> cd client</code></li>
-
-							<li>To install the dependencies, run the following command:<code>
-									npm install </code></li>
-							<li>Start the server by running the following command:<code> npm run dev</code></li>
-							<li>Open the project on browser at <code>[Server]</code> <a href=" http:/localhost:5173">
-									http://localhost:port_number</a></li>
-						</ul>
-					</section>
-					<!--//section-->
-
 					<section class="docs-section" id="item-2-2">
 						<h2 class="section-heading">API Setup</h2>
 
@@ -337,6 +322,24 @@
 
 						</ul>
 					</section>
+					<section class="docs-section" id="item-2-1">
+						<h2 class="section-heading">Client Setup</h2>
+						<ul>
+
+							<li>Start the client side by running the following command:<code> cd client</code></li>
+
+							<li>To install the dependencies, run the following command:<code>
+									npm install </code></li>
+							<li>If you run into errors, run the following command:<code>
+									npm install --legacy-peer-deps </code></li>
+							<li>Start the server by running the following command:<code> npm run dev</code></li>
+							<li>Open the project on browser at <code>[Server]</code> <a href=" http:/localhost:5173">
+									http://localhost:port_number</a></li>
+						</ul>
+					</section>
+					<!--//section-->
+
+
 					<!--//section-->
 
 					<section class="docs-section" id="item-2-3">
@@ -362,7 +365,12 @@
 					<header class="docs-header">
 						<h1 class="docs-heading">APIs</h1>
 						<section class="docs-intro">
-							<p>We used RESTful API in our website. RESTful APIs offer several benefits over other types of APIs, including scalability, flexibility, security, and compatibility. They are designed to handle a large number of requests without any impact on performance and can support a wide range of data formats. RESTful APIs can also be secured using a variety of authentication mechanisms, ensuring that data is protected in transit.We created the APIs using NodeJs, ExpressJs, Axios.</p>
+							<p>We used RESTful API in our website. RESTful APIs offer several benefits over other types
+								of APIs, including scalability, flexibility, security, and compatibility. They are
+								designed to handle a large number of requests without any impact on performance and can
+								support a wide range of data formats. RESTful APIs can also be secured using a variety
+								of authentication mechanisms, ensuring that data is protected in transit.We created the
+								APIs using NodeJs, ExpressJs, Axios.</p>
 						</section>
 						<!--//docs-intro-->
 					</header>
@@ -420,8 +428,8 @@
 						</h2>
 						<div class="row">
 							<col-4>
-							<img src="" alt="">
-						</col-4>
+								<img src="" alt="">
+							</col-4>
 						</div>
 					</section>
 					<!--//section-->
@@ -508,20 +516,20 @@
 					<section class="docs-section" id="item-6-1">
 						<div class="simplelightbox-gallery row mb-3">
 							<div class="col-12 col-md-4 mb-3">
-								<a href="assets/images/web_ss/hero.jpeg"><img
-										class="figure-img img-fluid shadow rounded" src="assets/images/web_ss/hero.jpeg"
+								<a href="assets/images/web_ss/hero.png"><img
+										class="figure-img img-fluid shadow rounded" src="assets/images/web_ss/hero.png"
 										alt="" title="Dotpot Hero Page" /></a>
 							</div>
 							<div class="col-12 col-md-4 mb-3">
-								<a href="assets/images/web_ss/about.jpeg"><img
+								<a href="assets/images/web_ss/about.png"><img
 										class="figure-img img-fluid shadow rounded"
-										src="assets/images/web_ss/about.jpeg" alt="" title="Dotpot About Page" /></a>
+										src="assets/images/web_ss/about.png" alt="" title="Dotpot About Page" /></a>
 							</div>
 							<!--//col-->
 							<div class="col-12 col-md-4 mb-3">
-								<a href="assets/images/web_ss/services.jpeg"><img
+								<a href="assets/images/web_ss/services.png"><img
 										class="figure-img img-fluid shadow rounded"
-										src="assets/images/web_ss/services.jpeg" alt=""
+										src="assets/images/web_ss/services.png" alt=""
 										title="Dotpot Services Page" /></a>
 							</div>
 							<!--//col-->
@@ -530,20 +538,20 @@
 						<!--//gallery-->
 						<div class="simplelightbox-gallery row mb-3">
 							<div class="col-12 col-md-4 mb-3">
-								<a href="assets/images/web_ss/jobs.jpeg"><img
-										class="figure-img img-fluid shadow rounded" src="assets/images/web_ss/jobs.jpeg"
+								<a href="assets/images/web_ss/jobs.png"><img
+										class="figure-img img-fluid shadow rounded" src="assets/images/web_ss/jobs.png"
 										alt="" title="Dotpot Job Page" /></a>
 							</div>
 							<div class="col-12 col-md-4 mb-3">
-								<a href="assets/images/web_ss/blog.jpeg"><img
-										class="figure-img img-fluid shadow rounded" src="assets/images/web_ss/blog.jpeg"
+								<a href="assets/images/web_ss/blog.png"><img
+										class="figure-img img-fluid shadow rounded" src="assets/images/web_ss/blog.png"
 										alt="" title="Dotpot Blog Page" /></a>
 							</div>
 							<!--//col-->
 							<div class="col-12 col-md-4 mb-3">
-								<a href="assets/images/web_ss/contact_us.jpeg"><img
+								<a href="assets/images/web_ss/contact_us.png"><img
 										class="figure-img img-fluid shadow rounded"
-										src="assets/images/web_ss/contact_us.jpeg" alt=""
+										src="assets/images/web_ss/contact_us.png" alt=""
 										title="Dotpot Contact Us Page" /></a>
 							</div>
 							<!--//col-->
@@ -552,15 +560,15 @@
 						<!--//gallery-->
 						<div class="simplelightbox-gallery row mb-3">
 							<div class="col-12 col-md-4 mb-3">
-								<a href="assets/images/web_ss/sign_in.jpeg"><img
+								<a href="assets/images/web_ss/sign_in.png"><img
 										class="figure-img img-fluid shadow rounded"
-										src="assets/images/web_ss/sign_in.jpeg" alt=""
+										src="assets/images/web_ss/sign_in.png" alt=""
 										title="Dotpot Sign-in Page" /></a>
 							</div>
 							<div class="col-12 col-md-4 mb-3">
-								<a href="assets/images/web_ss/register.jpeg"><img
+								<a href="assets/images/web_ss/register.png"><img
 										class="figure-img img-fluid shadow rounded"
-										src="assets/images/web_ss/register.jpeg" alt=""
+										src="assets/images/web_ss/register.png" alt=""
 										title="Dotpot register Page" /></a>
 							</div>
 							<!--//col-->
@@ -590,38 +598,38 @@
 					<section class="docs-section" id="item-7-1">
 						<div class="simplelightbox-gallery row mb-3">
 							<div class="col-12 col-md-2 mb-3">
-								<a href="assets/images/phone_ss/hero.jpeg"><img
+								<a href="assets/images/phone_ss/Screenshot_1.png"><img
 										class="figure-img img-fluid shadow rounded"
-										src="assets/images/phone_ss/hero.jpeg" alt="" title="Dotpot Hero Page" /></a>
+										src="assets/images/phone_ss/Screenshot_1.png" alt="" title="Dotpot Hero Page" /></a>
 							</div>
 							<div class="col-12 col-md-2 mb-3">
-								<a href="assets/images/phone_ss/about.jpeg"><img
+								<a href="assets/images/phone_ss/Screenshot_2.png"><img
 										class="figure-img img-fluid shadow rounded"
-										src="assets/images/phone_ss/about.jpeg" alt="" title="Dotpot About Page" /></a>
+										src="assets/images/phone_ss/Screenshot_2.png" alt="" title="Dotpot About Page" /></a>
 							</div>
 							<!--//col-->
 							<div class="col-12 col-md-2 mb-3">
-								<a href="assets/images/phone_ss/services.jpeg"><img
+								<a href="assets/images/phone_ss/Screenshot_3.png"><img
 										class="figure-img img-fluid shadow rounded"
-										src="assets/images/phone_ss/services.jpeg" alt=""
+										src="assets/images/phone_ss/Screenshot_3.png" alt=""
 										title="Dotpot Services Page" /></a>
 							</div>
 							<!--//col-->
 							<div class="col-12 col-md-2 mb-3">
-								<a href="assets/images/phone_ss/jobs.jpeg"><img
+								<a href="assets/images/phone_ss/Screenshot_4.png"><img
 										class="figure-img img-fluid shadow rounded"
-										src="assets/images/phone_ss/jobs.jpeg" alt="" title="Dotpot Job Page" /></a>
+										src="assets/images/phone_ss/Screenshot_4.png" alt="" title="Dotpot Job Page" /></a>
 							</div>
 							<div class="col-12 col-md-2 mb-3">
-								<a href="assets/images/phone_ss/blog.jpeg"><img
+								<a href="assets/images/phone_ss/Screenshot_5.png"><img
 										class="figure-img img-fluid shadow rounded"
-										src="assets/images/phone_ss/blog.jpeg" alt="" title="Dotpot Blog Page" /></a>
+										src="assets/images/phone_ss/Screenshot_5.png" alt="" title="Dotpot Blog Page" /></a>
 							</div>
 							<!--//col-->
 							<div class="col-12 col-md-2 mb-3">
-								<a href="assets/images/phone_ss/contact_us.jpeg"><img
+								<a href="assets/images/phone_ss/Screenshot_6.png"><img
 										class="figure-img img-fluid shadow rounded"
-										src="assets/images/phone_ss/contact_us.jpeg" alt=""
+										src="assets/images/phone_ss/Screenshot_6.png" alt=""
 										title="Dotpot Contact Us Page" /></a>
 							</div>
 							<!--//col-->
@@ -630,24 +638,24 @@
 						<!--//gallery-->
 						<div class="simplelightbox-gallery row mb-3">
 							<div class="simplelightbox-gallery row mb-3">
-								<div class="col-12 col-md-2 mb-3">
-									<a href="assets/images/phone_ss/chat.jpeg"><img
-											class="figure-img img-fluid shadow rounded"
-											src="assets/images/phone_ss/chat.jpeg" alt=""
-											title="Dotpot Chat Page" /></a>
-								</div>
-								<!--//col-->
+								
 
 								<div class="col-12 col-md-2 mb-3">
-									<a href="assets/images/phone_ss/sign_in.jpeg"><img
+									<a href="assets/images/phone_ss/Screenshot_7.png"><img
 											class="figure-img img-fluid shadow rounded"
-											src="assets/images/phone_ss/sign_in.jpeg" alt=""
+											src="assets/images/phone_ss/Screenshot_7.png" alt=""
 											title="Dotpot Sign-in Page" /></a>
 								</div>
 								<div class="col-12 col-md-2 mb-3">
-									<a href="assets/images/phone_ss/register.jpeg"><img
+									<a href="assets/images/phone_ss/Screenshot_8.png"><img
 											class="figure-img img-fluid shadow rounded"
-											src="assets/images/phone_ss/register.jpeg" alt=""
+											src="assets/images/phone_ss/Screenshot_8.png" alt=""
+											title="Dotpot register Page" /></a>
+								</div>
+								<div class="col-12 col-md-2 mb-3">
+									<a href="assets/images/phone_ss/Screenshot_9.png"><img
+											class="figure-img img-fluid shadow rounded"
+											src="assets/images/phone_ss/Screenshot_9.png" alt=""
 											title="Dotpot register Page" /></a>
 								</div>
 								<!--//col-->
@@ -696,8 +704,55 @@
 				</article>
 				<!--//docs-article-->
 
-
 				<article class="docs-article" id="section-9">
+					<header class="docs-header">
+						<h1 class="docs-heading">AWS Deployment</h1>
+						<section class="docs-intro">
+							<ul>
+								<li class="me-1">Create an AWS account if you don't have one already.</li>
+								<li class="me-1">Launch an EC2 instance with the desired specifications, such as the operating system, storage, and network configuration. You can use an Amazon Machine Image (AMI) with pre-installed software, or you can manually install the required software on the instance.</li>
+								<li class="me-1">Set up security groups to manage inbound and outbound traffic to the instance. Ensure that the necessary ports are open for your application to function properly.</li>
+								<li class="me-1">Connect to the instance using SSH or a remote desktop client, depending on your instance's operating system.</li>
+								<li class="me-1">Install PM2 on the instance by running the following command: <code>npm install -g pm2</code> </li>
+								<li class="me-1">Clone the DotpotiT website repository from GitHub onto the instance. <code>git clone https://github.com/DotpotiT/dotpotit.git</code> 
+								</li>
+								<li class="me-1">Go to API and install the necessary dependencies <code>cd api</code> <code>npm install</code> </li>
+								<li class="me-1">Start the API server using PM2. <code>pm2 start npm --name "api" -- start</code> </li>
+								<li class="me-1">
+									<img src="./assets/images/pm2_api_start.png" alt="pm2_api_start" class="img-fluid">
+								</li>
+								<li class="me-1">Serve the client-side application using the nginx.
+									<script src="https://gist.github.com/DotpotProject/e2b6599aabc66086ba2e93c7aeb3ab5b.js"></script>
+								</li>
+								<li class="me-1">Install the necessary dependencies, such as Node.js and other packages required by the application for client. <code>cd client</code> <code>npm install --legacy-peer-deps</code>  </li>
+								<li class="me-1">Build the client-side application using the following command: <code>npm run build</code> </li>
+								<li class="me-1">Serve the Client dist folder using PM2. <code>pm2 start --name "client" "npx serve dist -s -l 5173"
+									<img src="./assets/images/pm2_client_start.png" alt="pm2_client_start" class="img-fluid">
+								</code></li>
+								<li class="me-1">Set up a reverse proxy to route traffic from the web server to the API server running on port 8800.</li>
+								<li class="me-1">Test the application to ensure it's functioning as expected.
+								</li>
+								<li class="me-1">
+									Create a domain name for the application using Amazon Route 53.
+								</li>
+								<li class="me-1">
+									Configure the DNS records to point to the instance's public IP address.
+								</li>
+								<li class="me-1">
+									Set up SSL/TLS certificates using Amazon Certificate Manager to encrypt traffic to and from the application.
+								</li>
+								<li class="me-1">
+									Finally, monitor the application's performance and security, and make any necessary updates or changes.
+								</li>
+							</ul>
+						</section>
+						<!--//docs-intro-->
+					</header>
+					
+				</article>
+				<!--//docs-article-->
+
+				<article class="docs-article" id="section-10">
 					<header class="docs-header">
 						<h1 class="docs-heading">FAQs</h1>
 						<section class="docs-intro">
