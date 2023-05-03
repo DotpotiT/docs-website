@@ -371,6 +371,110 @@
 								support a wide range of data formats. RESTful APIs can also be secured using a variety
 								of authentication mechanisms, ensuring that data is protected in transit.We created the
 								APIs using NodeJs, ExpressJs, Axios.</p>
+
+								<h2>
+									Auth Router
+								</h2>
+								<br>
+								<h3>Register User</h3>
+								<br>
+								<p>Registers a new user.
+									<br><br>
+									<b>URL: /api/register</b>
+									<br><br>
+									HTTP Method: POST
+									<br><br>
+									<b>Authentication:</b>  No authentication required
+									<br><br>
+									<b>Request Parameters:</b> 
+								</p>
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<tr>
+											<td>Parameter</td>
+											<td>Type</td>
+											<td>Description</td>
+										</tr>
+										<tr>
+											<td>username</td>
+											<td>string</td>
+											<td>The user's username</td>
+										</tr>
+										<tr>
+											<td>email</td>
+											<td>string</td>
+											<td>The user's email address</td>
+										</tr>
+										<tr>
+											<td>password</td>
+											<td>string</td>
+											<td>The user's password</td>
+										</tr>
+									</table>
+								</div>
+								
+								<p><b>Response Parameters:</b></p>
+								<div class="table-responsive">
+								<table class="table table-striped">
+									<tr>
+										<td>Parameter</td>
+										<td>Type</td>
+										<td>Description</td>
+									</tr>
+									<tr>
+										<td>token</td>
+										<td>string</td>
+										<td>A JSON Web Token (JWT) that can be used for authentication</td>
+									</tr>
+									<tr>
+										<td>user</td>
+										<td>object</td>
+										<td>The registered user's details, without the password field
+										</td>
+									</tr>									
+								</table>
+							</div>
+								<p><b>Response Codes:</b></p>
+								<div class="table-responsive">
+								<table class="table table-striped">
+									<tr>
+										<td>HTTP Code</td>
+										<td>Description</td>
+									</tr>
+									<tr>
+										<td>200</td>
+										<td>User successfully registered</td>
+									</tr>
+									<tr>
+										<td>400</td>
+										<td>User already exists or invalid input</td>
+									</tr>
+									<tr>
+										<td>500</td>
+										<td>Server error</td>
+									</tr>
+
+								</table>
+							</div><br>
+								<p><b>Example Request:</b></p>
+								<code>{<br>
+									"username": "johndoe",<br>
+									"email": "johndoe@example.com",<br>
+									"password": "password123"<br>
+								  }</code>
+								 
+								  <p> <br><b> Example Response:</b></p>
+								  <code>{<br>
+									"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..",<br>
+									"user": {<br>
+									  "id": "616cc7fbf7669b05c87eb4d5",<br>
+									  "username": "johndoe",<br>
+									  "email": "johndoe@example.com"<br>
+									} <br>
+								  }</code>
+								  <br><br>
+								  <p>Please note that the actual implementation of this endpoint may vary depending on your specific use case and requirements. This is just an example to help you get started with documenting your API.</p>
+
 						</section>
 						<!--//docs-intro-->
 					</header>
@@ -382,56 +486,7 @@
 							client-side of the website to improve the website's responsiveness and overall user
 							experience. </p>
 					</section>
-					<!--//section-->
-
-					<section class="docs-section" id="item-3-2">
-						<h2 class="section-heading">ExpressJs</h2>
-						<p>We have used a popular nodeJs framework ExpressJs to develop our website. It provides a
-							variety of features and functionalities that help simplify the development process and make
-							it easier to build robust, scalable, and maintainable web applications.</p>
-
-						<p>Some of the main purposes of using Express.js in web application development include:</p>
-						<ul>
-							<li>Routing: Express.js provides a simple and flexible routing system that makes it easy to
-								define routes and handle HTTP requests. This allows developers to create RESTful APIs
-								and handle requests for different types of resources, such as HTML pages, JSON data, or
-								static files.</li>
-							<li>Middleware: Express.js middleware allows developers to add functionality to their
-								applications, such as authentication, logging, and error handling. This helps keep the
-								code organized and makes it easier to maintain and debug.</li>
-							<li>Templating: Express.js supports a variety of templating engines, such as EJS and
-								Handlebars, which allow developers to generate HTML dynamically and build dynamic web
-								pages.</li>
-							<li>Scalability: Express.js is designed to be highly scalable and can handle a large number
-								of requests efficiently. This makes it a good choice for building high-traffic web
-								applications.</li>
-							<li>Community and Ecosystem: Express.js has a large and active community of developers,
-								which means there are many plugins, modules, and tools available that can be easily
-								integrated into your application. This can help speed up development and add new
-								features and functionality to your application.</li>
-
-						</ul>
-					</section>
-					<!--//section-->
-
-					<section class="docs-section" id="item-3-3">
-						<h2 class="section-heading">Axios</h2>
-						<p>Axios is a popular JavaScript library that is used for making HTTP requests from a web
-							browser or Node.js. It provides an easy-to-use interface for making asynchronous HTTP
-							requests, and it supports a variety of request and response types, such as JSON, XML, and
-							FormData. We have used Axios to provide a convenient and consistent interface for making
-							HTTP requests in our website development, while also providing additional features for error
-							handling and response interception.</p>
-					</section>
-					<section class="docs-section" id="item-3-3">
-						<h2 class="section-heading">Screenshot
-						</h2>
-						<div class="row">
-							<col-4>
-								<img src="" alt="">
-							</col-4>
-						</div>
-					</section>
+					
 					<!--//section-->
 				</article>
 				<!--//docs-article-->
@@ -703,7 +758,7 @@
 					<!--//section-->
 				</article>
 				<!--//docs-article-->
-
+				APIs
 				<article class="docs-article" id="section-9">
 					<header class="docs-header">
 						<h1 class="docs-heading">AWS Deployment</h1>
@@ -722,7 +777,7 @@
 									<img src="./assets/images/pm2_api_start.png" alt="pm2_api_start" class="img-fluid">
 								</li>
 								<li class="me-1">Serve the client-side application using the nginx.
-									<script src="https://gist.github.com/DotpotProject/e2b6599aabc66086ba2e93c7aeb3ab5b.js"></script>
+									<script src="https://gist.github.com/DotpotProject/91733cc9bc63ab9f0d1ff8e0fef8e866.js"></script>
 								</li>
 								<li class="me-1">Install the necessary dependencies, such as Node.js and other packages required by the application for client. <code>cd client</code> <code>npm install --legacy-peer-deps</code>  </li>
 								<li class="me-1">Build the client-side application using the following command: <code>npm run build</code> </li>
