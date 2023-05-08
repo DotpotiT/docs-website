@@ -128,9 +128,10 @@
 					<li class="nav-item"><a class="nav-link scrollto" href="#item-8-3">SVG Loader</a></li>
 
 					<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-9"><span
-								class="theme-icon-holder me-2"><i class="fas fa-book-reader"></i></span>AWS Deployment</a>
+								class="theme-icon-holder me-2"><i class="fas fa-book-reader"></i></span>AWS
+							Deployment</a>
 					</li>
-					
+
 
 					<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-10"><span
 								class="theme-icon-holder me-2"><i class="fas fa-lightbulb"></i></span>FAQs</a></li>
@@ -372,21 +373,22 @@
 								of authentication mechanisms, ensuring that data is protected in transit.We created the
 								APIs using NodeJs, ExpressJs, Axios.</p>
 
-								<h2>
-									Auth Router
-								</h2>
-								<br>
+							<h2>
+								Auth Router
+							</h2>
+							<br>
+							<div>
 								<h3>Register User</h3>
 								<br>
 								<p>Registers a new user.
 									<br><br>
-									<b>URL: /api/register</b>
+									<b>URL: /api/auth/register</b>
 									<br><br>
 									HTTP Method: POST
 									<br><br>
-									<b>Authentication:</b>  No authentication required
+									<b>Authentication:</b> No authentication required
 									<br><br>
-									<b>Request Parameters:</b> 
+									<b>Request Parameters:</b>
 								</p>
 								<div class="table-responsive">
 									<table class="table table-striped">
@@ -412,82 +414,2437 @@
 										</tr>
 									</table>
 								</div>
-								
+
 								<p><b>Response Parameters:</b></p>
 								<div class="table-responsive">
-								<table class="table table-striped">
-									<tr>
-										<td>Parameter</td>
-										<td>Type</td>
-										<td>Description</td>
-									</tr>
-									<tr>
-										<td>token</td>
-										<td>string</td>
-										<td>A JSON Web Token (JWT) that can be used for authentication</td>
-									</tr>
-									<tr>
-										<td>user</td>
-										<td>object</td>
-										<td>The registered user's details, without the password field
-										</td>
-									</tr>									
-								</table>
-							</div>
+									<table class="table table-striped">
+										<tr>
+											<td>Parameter</td>
+											<td>Type</td>
+											<td>Description</td>
+										</tr>
+										<tr>
+											<td>token</td>
+											<td>string</td>
+											<td>A JSON Web Token (JWT) that can be used for authentication</td>
+										</tr>
+										<tr>
+											<td>user</td>
+											<td>object</td>
+											<td>The registered user's details, without the password field
+											</td>
+										</tr>
+									</table>
+								</div>
 								<p><b>Response Codes:</b></p>
 								<div class="table-responsive">
-								<table class="table table-striped">
-									<tr>
-										<td>HTTP Code</td>
-										<td>Description</td>
-									</tr>
-									<tr>
-										<td>200</td>
-										<td>User successfully registered</td>
-									</tr>
-									<tr>
-										<td>400</td>
-										<td>User already exists or invalid input</td>
-									</tr>
-									<tr>
-										<td>500</td>
-										<td>Server error</td>
-									</tr>
+									<table class="table table-striped">
+										<tr>
+											<td>HTTP Code</td>
+											<td>Description</td>
+										</tr>
+										<tr>
+											<td>200</td>
+											<td>User successfully registered</td>
+										</tr>
+										<tr>
+											<td>400</td>
+											<td>User already exists or invalid input</td>
+										</tr>
+										<tr>
+											<td>500</td>
+											<td>Server error</td>
+										</tr>
 
-								</table>
-							</div><br>
+									</table>
+								</div><br>
 								<p><b>Example Request:</b></p>
 								<code>{<br>
 									"username": "johndoe",<br>
 									"email": "johndoe@example.com",<br>
 									"password": "password123"<br>
-								  }</code>
-								 
-								  <p> <br><b> Example Response:</b></p>
-								  <code>{<br>
-									"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..",<br>
+									}</code>
+
+								<p> <br><b> Example Response:</b></p>
+								<code>
+									{<br>
+									"token":
+									"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ1NjE1OTE4ZTI4ODY2YmNjMDBjNzc3Iiwicm9sZSI6IlVTRVIiLCJ1c2VybmFtZSI6ImppbXJvY2sifSwiaWF0IjoxNjgzMzYzMjE3LCJleHAiOjE2ODM2MjI0MTd9.xHZO2XHlt0EuVLBxggbG7VOe2ZfIAgezNl_8klfBnO8",<br>
 									"user": {<br>
-									  "id": "616cc7fbf7669b05c87eb4d5",<br>
-									  "username": "johndoe",<br>
-									  "email": "johndoe@example.com"<br>
+									"username": "johndoe",<br>
+									"email": "johndoe@example.com",<br>
+									"photo": "",<br>
+									"role": "USER",<br>
+									"_id": "645615918e28866bcc00c777",<br>
+									"createdAt": "2023-05-06T08:53:37.585Z",<br>
+									"updatedAt": "2023-05-06T08:53:37.585Z",<br>
+									"__v": 0 <br>
 									} <br>
-								  }</code>
-								  <br><br>
-								  <p>Please note that the actual implementation of this endpoint may vary depending on your specific use case and requirements. This is just an example to help you get started with documenting your API.</p>
+									}
+								</code>
+								<br><br>
+							</div>
+							<div>
+								<h3>Login User</h3>
+								<br>
+								<p>Logs in an existing user.
+									<br><br>
+									<b>URL: auth/api/login</b>
+									<br><br>
+									HTTP Method: POST
+									<br><br>
+									<b>Authentication:</b> No authentication required
+									<br><br>
+									<b>Request Parameters:</b>
+								</p>
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<tr>
+											<td>Parameter</td>
+											<td>Type</td>
+											<td>Description</td>
+										</tr>
+										<tr>
+											<td>email</td>
+											<td>string</td>
+											<td>The user's email address</td>
+										</tr>
+										<tr>
+											<td>password</td>
+											<td>string</td>
+											<td>The user's password</td>
+										</tr>
+									</table>
+								</div>
+								<p><b>Response Parameters:</b></p>
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<tr>
+											<td>Parameter</td>
+											<td>Type</td>
+											<td>Description</td>
+										</tr>
+										<tr>
+											<td>user</td>
+											<td>object</td>
+											<td>The registered user's details, without the password field
+											</td>
+										</tr>
+										<tr>
+											<td>token</td>
+											<td>string</td>
+											<td>A JSON Web Token (JWT) that can be used for authentication</td>
+										</tr>
+									</table>
+								</div>
+								<p><b>Response Codes:</b></p>
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<tr>
+											<td>HTTP Code</td>
+											<td>Description</td>
+										</tr>
+										<tr>
+											<td>200</td>
+											<td>User successfully registered</td>
+										</tr>
+										<tr>
+											<td>400</td>
+											<td>User already exists or invalid input</td>
+										</tr>
+										<tr>
+											<td>500</td>
+											<td>Server error</td>
+										</tr>
+
+									</table>
+								</div><br>
+								<p><b>Example Request:</b></p>
+								<code>{<br>
+									"email": "johndoe@example.com",<br>
+									"password": "password123"<br>
+									}</code>
+
+								<p> <br><b> Example Response:</b></p>
+								<code>{ <br>
+									"token":
+									"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ1NjE1OTE4ZTI4ODY2YmNjMDBjNzc3Iiwicm9sZSI6IlVTRVIiLCJ1c2VybmFtZSI6ImppbXJvY2sifSwiaWF0IjoxNjgzMzYzNTg1LCJleHAiOjE2ODM2MjI3ODV9.e5wu3fjvoayZu-zXPUEWo--UqGX5hS50gS2IkU5ox1w",<br>
+									"user": {<br>
+									"_id": "645615918e28866bcc00c777",<br>
+									"username": "jimrock",<br>
+									"email": "jimrock737@gmail.com",<br>
+									"photo": "",<br>
+									"role": "USER",<br>
+									"createdAt": "2023-05-06T08:53:37.585Z",<br>
+									"updatedAt": "2023-05-06T08:53:37.585Z",<br>
+									"__v": 0 <br>
+									}<br>
+									}</code>
+								<br><br>
+							</div>
+
+							<div>
+								<h3>Google Signup Endpoint</h3>
+								<br>
+								<p>This endpoint is used to sign up a new user to your application using their Google
+									account credentials.
+									<br>
+									<h4>Request</h4>
+									<br>
+									<b>URL: api/auth/google</b>
+									<br><br>
+									HTTP Method: POST
+									<br><br>
+									<b>Headers:</b> Content-Type: application/json
+									<br><br>
+									<b>Body:</b>
+								</p>
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<tr>
+											<td>Field</td>
+											<td>Type</td>
+											<td>Required</td>
+											<td>Description</td>
+										</tr>
+										<tr>
+											<td>code</td>
+											<td>string</td>
+											<td>Yes</td>
+											<td>The authorization code obtained from Google after the user grants
+												permission for your app to access their Google account.</td>
+										</tr>
+									</table>
+								</div>
+
+								<br>
+								<p><b>Example request body:</b></p>
+								<div>
+									<code>{<br>
+										"code": "google auth code"<br>
+										}</code>
+								</div>
+								<br>
+								<h4>Response</h4>
+								<br>
+								<p>Success Status Code: 200 OK</p>
+								<p>Content Type: application/json</p>
+
+								<p><b>Response Parameters:</b></p>
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<tr>
+											<td>Field</td>
+											<td>Type</td>
+											<td>Description</td>
+										</tr>
+										<tr>
+											<td>success</td>
+											<td>boolean</td>
+											<td>Indicates whether the operation was successful or not.
+											</td>
+										</tr>
+										<tr>
+											<td>user</td>
+											<td>object</td>
+											<td>An object containing information about the newly created user.
+											</td>
+										</tr>
+										<tr>
+											<td>token </td>
+											<td>string</td>
+											<td>A JWT token that can be used to authenticate subsequent requests.
+											</td>
+										</tr>
+									</table>
+								</div>
+
+								<p> <br><b> Example Response:</b></p>
+								<div><code>{<br>
+										"success": true,<br>
+										"user": {<br>
+										"_id": "user id",<br>
+										"username": "user name",<br>
+										"email": "user email",<br>
+										"photo": "user photo URL",<br>
+										}, <br>
+										"token": "JWT token",
+										}</code></div>
+
+								<br>
+								<h4>Error Responses</h4>
+								<p>Status Code: 500 Internal Server Error</p>
+								<p>Content Type: application/json</p>
+								<p>Description: Returned if there is an error during the authentication or database
+									operation.</p>
+								<p>Body:</p>
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<tr>
+											<td>Field</td>
+											<td>Type</td>
+											<td>Description</td>
+										</tr>
+										<tr>
+											<td>error</td>
+											<td>string</td>
+											<td>A message describing the error that occurred.</td>
+
+										</tr>
+									</table>
+								</div>
+
+								<br>
+								<p><b>Example response:</b></p>
+
+								<div>
+									<code>{ <br>
+										"error": "error message"<br>
+										}</code>
+								</div>
+								<br>
+								<p>Status Code: 401 Unauthorized</p>
+								<p>Content Type: application/json</p>
+								<p>Description: Returned if the user email is not verified.</p>
+								<p>Body</p>
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<tr>
+											<td>Field</td>
+											<td>Type</td>
+											<td>Description</td>
+										</tr>
+										<tr>
+											<td>error</td>
+											<td>string</td>
+											<td>A message indicating that the user is not authorized.</td>
+										</tr>
+									</table>
+								</div>
+								<p><b>Example response:</b></p>
+								<code>{ <br>
+									"error": "Unauthorized"<br>
+									}</code>
+							</div>
+							<br><br>
+							<div>
+								<h3>Reset Password</h3>
+								<br>
+								<p>Initiates a password reset request for a user.
+									<br><br>
+									<b>URL: /api/auth/reset-password</b>
+									<br><br>
+									HTTP Method: POST
+									<br><br>
+									<b>Authentication:</b> No authentication required
+									<br><br>
+									<b>Request Parameters:</b>
+								</p>
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<tr>
+											<td>Parameter</td>
+											<td>Type</td>
+											<td>Description</td>
+										</tr>
+										<tr>
+											<td>email</td>
+											<td>string</td>
+											<td>The email address of the user to reset
+											</td>
+										</tr>
+
+									</table>
+								</div>
+
+								<p><b>Response Parameters:</b></p>
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<tr>
+											<td>Parameter</td>
+											<td>Type</td>
+											<td>Description</td>
+										</tr>
+
+										<tr>
+											<td>success</td>
+											<td>boolean</td>
+											<td>Whether the request was successful
+											</td>
+										</tr>
+										<tr>
+											<td>message</td>
+											<td>string</td>
+											<td>A message describing the result</td>
+										</tr>
+									</table>
+								</div>
+								<p><b>Response Codes:</b></p>
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<tr>
+											<td>HTTP Code</td>
+											<td>Description</td>
+										</tr>
+										<tr>
+											<td>200</td>
+											<td>Successful</td>
+										</tr>
+										<tr>
+											<td>404</td>
+											<td>User not found</td>
+										</tr>
+										<tr>
+											<td>500</td>
+											<td>Server error</td>
+										</tr>
+
+									</table>
+								</div><br>
+								<p><b>Example Request:</b></p>
+								<code>{<br>
+									"email": "johndoe@example.com",<br>
+									}</code>
+
+								<p> <br><b> Example Response:</b></p>
+								<code>{ <br>
+									"success": true,<br>
+									"message": "Email sent, please check your mail!"<br>
+									}</code>
+								<br><br>
+							</div>
+							<div>
+								<h3>Verify Reset Password</h3>
+								<p>Verifies a user's reset password token and updates their password in the database.
+								</p>
+								<p><b>Request</b></p>
+								<p>Method: POST</p>
+								<p>Headers:</p>
+								<p>Content-Type: application/json</p>
+								<p>Path Parameters:</p>
+								<p><b>resetToken</b> (string): The reset password token received by the user.</p>
+								<p>Request Body:</p>
+								<div>
+									<code>{<br>
+										"password": "string"<br>
+										}</code>
+								</div>
+								<p><b>password</b> (string): The new password to set.</p>
+
+								<h4>Responses</h4>
+								<p>Success (200 OK)</p>
+								<div>
+									<code>
+										{<br>
+										"success": true,<br>
+										"message": "Password reset successfully"<br>
+										}
+									</code>
+								</div>
+								<br>
+								<p>Error (404 Not Found)</p>
+								<div>
+									<code>
+										{<br>
+										"success": false,<br>
+										"message": "Invalid or expired reset token"<br>
+										}
+									</code>
+								</div>
+								<br>
+								<p>Error (500 Internal Server Error)</p>
+								<div>
+									<code>
+										{<br>
+										"success": false,<br>
+										"message": "Something went wrong"<br>
+										}
+									</code>
+								</div>
+								<br>
+								<p><b>Example</b></p>
+								<p>Request</p>
+								<div>
+									<code>
+										POST api/auth/reset-password/6eb990b423b63dc334623a8a8b1b4eef7bfabbfd <br>
+										Content-Type: application/json <br>
+
+										{<br>
+										"password": "newPassword123"<br>
+										}
+									</code>
+								</div>
+								<br>
+								<p>Response:</p>
+								<div>
+									<code>
+										HTTP/1.1 200 OK <br>
+										Content-Type: application/json <br>
+
+										{<br>
+
+										"success": true,<br>
+										"message": "Password reset successfully"<br>
+										}
+									</code>
+								</div>
+
+							</div>
+							<br><br>
+							<div>
+								<div>
+									<h2>User</h2>
+									<div>
+										<h3>Get User</h3>
+										<p><b>GET /api/user/all</b></p>
+										<p>Get all user.</p>
+
+										<p>Request</p>
+										<ul>
+											<li>Method: GET</li>
+											<li>URL: /api/auth/user/:id</li>
+											<li>Params:
+												<ul>
+													<li>id: The ID of the user to retrieve</li>
+												</ul>
+											</li>
+											<li>Authentication: Required</li>
+										</ul>
+										<p>Response</p>
+										<ul>
+											<li>Status Code: 200 OK</li>
+											<li>Content: JSON object representing the user's profile</li>
+										</ul>
+
+										<p><b>Example Response</b></p>
+										<div>
+											<code>
+												{<br>
+												"_id": "643a6021e4fc63378f2731d1",<br>
+												"username": "zakir",<br>
+												"email": "shakilsab8055@yahoo.com",<br>
+												"photo": "",<br>
+												"role": "USER",<br>
+												"createdAt": "2023-04-15T08:28:17.396Z",<br>
+												"updatedAt": "2023-04-15T08:28:17.396Z",<br>
+												"__v": 0 <br>
+												}
+											</code>
+										</div>
+										<br>
+									</div>
+								</div>
+
+								<div>
+									<h3>Get user by id</h3>
+									<p><b>GET /api/user:id</b></p>
+									<p>Get singe user by ID.</p>
+									<p>Request</p>
+									<ul>
+										<li>Method: GET</li>
+										<li>URL: /api/user/:id</li>
+										<li>Params:
+											<ul>
+												<li>id: The ID of the user to retrieve</li>
+											</ul>
+										</li>
+										<li>Authentication: Required</li>
+									</ul>
+									<ul>
+										<li>Status Code: 200 OK</li>
+										<li>Content: JSON object representing the user's profile</li>
+									</ul>
+
+									<p><b>Example Response</b></p>
+									<div>
+										<code>
+											{<br>
+											"_id": "643a6021e4fc63378f2731d1",<br>
+											"username": "zakir",<br>
+											"email": "shakilsab8055@yahoo.com",<br>
+											"photo": "",<br>
+											"role": "USER",<br>
+											"createdAt": "2023-04-15T08:28:17.396Z",<br>
+											"updatedAt": "2023-04-15T08:28:17.396Z",<br>
+											"__v": 0 <br>
+											}
+										</code>
+									</div>
+								</div>
+								<br>
+								<div>
+									<h3>Update user by id</h3>
+									<p><b>PUT /api/user:id</b></p>
+									<p>Update single user by ID.</p>
+									<p>Request</p>
+									<ul>
+										<li>Method: PUT</li>
+										<li>URL: /api/user/:id</li>
+									</ul>
+
+									<p><b>Response Codes:</b></p>
+									<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<td>HTTP Code</td>
+												<td>Description</td>
+											</tr>
+											<tr>
+												<td>200</td>
+												<td>Successful</td>
+											</tr>
+											<tr>
+												<td>404</td>
+												<td>User not found</td>
+											</tr>
+											<tr>
+												<td>500</td>
+												<td>Server error</td>
+											</tr>
+
+										</table>
+									</div><br>
+
+									<p>Example request:</p>
+									<div>
+										<code>
+											{<br>
+
+											"username": "Shamshul Haque"<br>
+											}
+										</code>
+									</div>
+									<br>
+
+									<p>Example response:</p>
+									<div>
+										<code>
+											{<br>
+											"_id": "642bf17bd6b9e17900177ac4",<br>
+											"username": "Shamshul Haque",<br>
+											"email": "haque.shamshul27@gmail.com",<br>
+											"photo":
+											"https://lh3.googleusercontent.com/a/AGNmyxbWW-3bypv8W-OYjd-mhS06WBa_LiiMHfyYb60u=s96-c",<br>
+											"role": "USER",<br>
+											"createdAt": "2023-04-04T09:44:27.645Z",<br>
+											"updatedAt": "2023-04-18T05:28:15.025Z",<br>
+											"__v": 0 <br>
+											}
+										</code>
+									</div>
+								</div>
+								<br>
+								<div>
+									<h3>Delete User</h3>
+									<p>Remove a user with the specified ID from the database.</p>
+									<p><b>Request:</b></p>
+									<ul>
+										<li>HTTP Method: DELETE</li>
+										<li>URL: /api/user/:id</li>
+										<li>URL Parameters:
+											<ul>
+												<li>id (required): The unique identifier of the user to remove.</li>
+											</ul>
+										</li>
+										<li>Headers: None</li>
+										<li>Body: None</li>
+									</ul>
+									<p><b>Response Codes:</b></p>
+									<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<td>HTTP Code</td>
+												<td>Description</td>
+											</tr>
+											<tr>
+												<td>200</td>
+												<td>Successful</td>
+											</tr>
+											<tr>
+												<td>404</td>
+												<td>User not found</td>
+											</tr>
+											<tr>
+												<td>500</td>
+												<td>Server error</td>
+											</tr>
+
+										</table>
+									</div><br>
+									<p><b>Example</b></p>
+									<p>Request:</p>
+									<div>
+										<code>
+											DELETE /api/user/:615afde1c64218212a26d9c9
+										</code>
+									</div>
+									<br>
+									<p>Response:</p>
+									<div>
+										<code>
+											{<br>
+											"msg": "User removed"<br>
+											}
+
+										</code>
+									</div>
+								</div>
+							</div>
+
+							<div>
+								<div>
+									<h2>Blog</h2>
+									<div>
+										<h3>Get All Blog</h3>
+										<p><b>GET /api/blog</b></p>
+										<p>Get all Blog.</p>
+
+										<p>Request</p>
+										<ul>
+											<li>Method: GET</li>
+											<li>URL: /api/blog/</li>
+											<li>Authentication: Required</li>
+										</ul>
+										<p>Response</p>
+										<ul>
+											<li>Status Code: 200 OK</li>
+											<li>Content: JSON object</li>
+										</ul>
+
+										<p><b>Example Response</b></p>
+										<div>
+											<code>
+												{<br>
+												"_id": "645236478e28866bcc0072e9",<br>
+												"title": "Exploring the Advantages of Using a Real Estate App.",<br>
+												"author": "641581ed87c2dd59098ec7bd",<br>
+												"body": "Body",<br>
+												"tags": [<br>
+												"Real Estate app", <br>
+												"Real estate", <br>
+												"Application" <br>
+												],<br>
+												"categories": [], <br>
+												"image": "uploads/blogs/real-estate-app-1683109447717.png",<br>
+												"isPublished": true,<br>
+												"createdAt": "2023-05-03T10:24:07.820Z",<br>
+												"updatedAt": "2023-05-03T10:50:25.538Z",<br>
+												"__v": 0 <br>
+												} <br>
+												......
+											</code>
+										</div>
+										<br>
+									</div>
+								</div>
+
+
+								<div>
+
+									<div>
+										<h3>Get Blog By Id</h3>
+										<p><b>GET /api/blog/:id</b></p>
+										<p>Get all Blog.</p>
+
+										<p>Request</p>
+										<ul>
+											<li>Method: GET</li>
+											<li>URL: /api/blog/:id</li>
+											<li>Params:
+												<ul>
+													<li>id: The ID of the user to retrieve</li>
+												</ul>
+											</li>
+											<li>Authentication: Required</li>
+										</ul>
+										<p>Response</p>
+										<ul>
+											<li>Status Code: 200 OK</li>
+											<li>Content: JSON object</li>
+										</ul>
+
+										<p><b>Example Response</b></p>
+										<div>
+											<code>
+												{<br>
+												"_id": "645236478e28866bcc0072e9",<br>
+												"title": "Exploring the Advantages of Using a Real Estate App.",<br>
+												"author": "641581ed87c2dd59098ec7bd",<br>
+												"body": "Body",<br>
+												"tags": [<br>
+												"Real Estate app", <br>
+												"Real estate", <br>
+												"Application" <br>
+												],<br>
+												"categories": [], <br>
+												"image": "uploads/blogs/real-estate-app-1683109447717.png",<br>
+												"isPublished": true,<br>
+												"createdAt": "2023-05-03T10:24:07.820Z",<br>
+												"updatedAt": "2023-05-03T10:50:25.538Z",<br>
+												"__v": 0 <br>
+												}
+											</code>
+										</div>
+										<br>
+									</div>
+								</div>
+
+
+								<br>
+								<div>
+									<h3>Update blog by id</h3>
+									<p><b>PUT /api/blog:/id</b></p>
+									<p>Update blog ID.</p>
+									<p>Request</p>
+									<ul>
+										<li>Method: PUT</li>
+										<li>URL: /api/blog/:id</li>
+									</ul>
+									<p><b>Response Codes:</b></p>
+									<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<td>HTTP Code</td>
+												<td>Description</td>
+											</tr>
+											<tr>
+												<td>200</td>
+												<td>Successful</td>
+											</tr>
+											<tr>
+												<td>404</td>
+												<td>User not found</td>
+											</tr>
+											<tr>
+												<td>500</td>
+												<td>Server error</td>
+											</tr>
+
+										</table>
+									</div><br>
+									<p>Example request:</p>
+									<div>
+										<code>
+											{
+											"body" : "content"
+											}
+										</code>
+									</div>
+									<br>
+									<p>Example response:</p>
+									<div>
+										<code>
+											{<br>
+											"_id": "645236478e28866bcc0072e9",<br>
+											"title": "Exploring the Advantages of Using a Real Estate App.",<br>
+											"author": "641581ed87c2dd59098ec7bd",<br>
+											"body": "content",<br>
+											"tags": [<br>
+											"Real Estate app", <br>
+											"Real estate", <br>
+											"Application" <br>
+											],<br>
+											"categories": [], <br>
+											"image": "uploads/blogs/real-estate-app-1683109447717.png",<br>
+											"isPublished": true,<br>
+											"createdAt": "2023-05-03T10:24:07.820Z",<br>
+											"updatedAt": "2023-05-03T10:50:25.538Z",<br>
+											"__v": 0 <br>
+											}
+										</code>
+									</div>
+								</div>
+								<br>
+								<div>
+									<h3>Delete blog</h3>
+									<p>Remove a blog with the specified ID from the database.</p>
+									<p><b>Request:</b></p>
+									<ul>
+										<li>HTTP Method: DELETE</li>
+										<li>URL: /api/blog/:id</li>
+										<li>URL Parameters:
+											<ul>
+												<li>id (required): The unique identifier of the blog to remove.</li>
+											</ul>
+										</li>
+										<li>Headers: None</li>
+										<li>Body: None</li>
+									</ul>
+									<p><b>Response Codes:</b></p>
+									<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<td>HTTP Code</td>
+												<td>Description</td>
+											</tr>
+											<tr>
+												<td>200</td>
+												<td>Successful</td>
+											</tr>
+											<tr>
+												<td>404</td>
+												<td>User not found</td>
+											</tr>
+											<tr>
+												<td>500</td>
+												<td>Server error</td>
+											</tr>
+
+										</table>
+									</div><br>
+									<p><b>Example</b></p>
+									<p>Request:</p>
+									<div>
+										<code>
+											DELETE /api/blog/:615afde1c64218212a26d9c9
+										</code>
+									</div>
+									<br>
+									<p>Response:</p>
+									<div>
+										<code>
+											{<br>
+											"msg": "Blog removed"<br>
+											}
+
+										</code>
+									</div>
+								</div>
+							</div>
+
+
+
+							<div>
+								<div>
+									<h2>Client Review</h2>
+									<div>
+										<h3>Get All Client Review</h3>
+										<p><b>GET /api/client_review</b></p>
+										<p>Get all Client Review.</p>
+
+										<p>Request</p>
+										<ul>
+											<li>Method: GET</li>
+											<li>URL: /api/client_review/</li>
+											<li>Authentication: Required</li>
+										</ul>
+										<p>Response</p>
+										<ul>
+											<li>Status Code: 200 OK</li>
+											<li>Content: JSON object</li>
+										</ul>
+
+										<p><b>Example Response</b></p>
+										<div>
+											<code>
+												{<br>
+												"_id": "641583904881c61ac50c4587",<br>
+												"client_name": "Jacob Hoffman",<br>
+												"client_image": "uploads/blogs/img-0648-1680500012868.jpg",<br>
+												"company_name": "Filasco America LLC",<br>
+												"company_image": "",<br>
+												"position": "CEO", <br>
+												"review_text": "I can't say enough about the excellent work that
+												DotpotiT has done on our website. They took a below-average website and
+												transformed it into an appealing and informative website.",<br>
+												"social_media_links": [],<br>
+												"createdAt": "2023-03-18T09:25:36.111Z",<br>
+												"updatedAt": "2023-04-17T06:47:36.624Z",<br>
+												"__v": 0 <br>
+												} <br>
+												......
+											</code>
+										</div>
+										<br>
+									</div>
+								</div>
+
+
+								<div>
+
+									<div>
+										<h3>Get Client Review By Id</h3>
+										<p><b>GET /api/client_review/:id</b></p>
+										<p>Get all Blog.</p>
+
+										<p>Request</p>
+										<ul>
+											<li>Method: GET</li>
+											<li>URL:/api/client_review/:id</li>
+											<li>Params:
+												<ul>
+													<li>id: The ID of the client review to retrieve</li>
+												</ul>
+											</li>
+											<li>Authentication: Required</li>
+										</ul>
+										<p>Response</p>
+										<ul>
+											<li>Status Code: 200 OK</li>
+											<li>Content: JSON object</li>
+										</ul>
+
+										<p><b>Example Response</b></p>
+										<div>
+											<code>
+												{<br>
+												"_id": "641583904881c61ac50c4587",<br>
+												"client_name": "Jacob Hoffman",<br>
+												"client_image": "uploads/blogs/img-0648-1680500012868.jpg",<br>
+												"company_name": "Filasco America LLC",<br>
+												"company_image": "",<br>
+												"position": "CEO", <br>
+												"review_text": "I can't say enough about the excellent work that
+												DotpotiT has done on our website. They took a below-average website and
+												transformed it into an appealing and informative website.",<br>
+												"social_media_links": [],<br>
+												"createdAt": "2023-03-18T09:25:36.111Z",<br>
+												"updatedAt": "2023-04-17T06:47:36.624Z",<br>
+												"__v": 0 <br>
+												}
+											</code>
+										</div>
+										<br>
+									</div>
+								</div>
+
+
+								<br>
+								<div>
+									<h3>Update Client Review by id</h3>
+									<p><b>PUT /api/client_review/:id</b></p>
+									<p>Update blog ID.</p>
+									<p>Request</p>
+									<ul>
+										<li>Method: PUT</li>
+										<li>URL: /api/blog/:id</li>
+									</ul>
+									<p><b>Response Codes:</b></p>
+									<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<td>HTTP Code</td>
+												<td>Description</td>
+											</tr>
+											<tr>
+												<td>200</td>
+												<td>Successful</td>
+											</tr>
+											<tr>
+												<td>404</td>
+												<td>User not found</td>
+											</tr>
+											<tr>
+												<td>500</td>
+												<td>Server error</td>
+											</tr>
+
+										</table>
+									</div><br>
+									<p>Example request:</p>
+									<div>
+										<code>
+											{<br>
+											"company_name": "Filasco America LLC",<br>
+											"company_image": "",<br>
+											"position": "CEO", <br>
+											}
+										</code>
+									</div>
+									<br>
+									<p>Example response:</p>
+									<div>
+										<code>
+											{<br>
+											"_id": "641583904881c61ac50c4587",<br>
+											"client_name": "Jacob Hoffman",<br>
+											"client_image": "uploads/blogs/img-0648-1680500012868.jpg",<br>
+											"company_name": "Filasco America LLC",<br>
+											"company_image": "",<br>
+											"position": "CEO", <br>
+											"review_text": "I can't say enough about the excellent work that DotpotiT
+											has done on our website. They took a below-average website and transformed
+											it into an appealing and informative website.",<br>
+											"social_media_links": [],<br>
+											"createdAt": "2023-03-18T09:25:36.111Z",<br>
+											"updatedAt": "2023-04-17T06:47:36.624Z",<br>
+											"__v": 0 <br>
+											}
+										</code>
+									</div>
+								</div>
+								<br>
+								<div>
+									<h3>Client Review Delete</h3>
+									<p>Remove a Client Review with the specified ID from the database.</p>
+									<p><b>Request:</b></p>
+									<ul>
+										<li>HTTP Method: DELETE</li>
+										<li>URL: /api/client_review/:id</li>
+										<li>URL Parameters:
+											<ul>
+												<li>id (required): The unique identifier of the Client Review to remove.
+												</li>
+											</ul>
+										</li>
+										<li>Headers: None</li>
+										<li>Body: None</li>
+									</ul>
+									<p><b>Response Codes:</b></p>
+									<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<td>HTTP Code</td>
+												<td>Description</td>
+											</tr>
+											<tr>
+												<td>200</td>
+												<td>Successful</td>
+											</tr>
+											<tr>
+												<td>404</td>
+												<td>User not found</td>
+											</tr>
+											<tr>
+												<td>500</td>
+												<td>Server error</td>
+											</tr>
+
+										</table>
+									</div><br>
+									<p><b>Example</b></p>
+									<p>Request:</p>
+									<div>
+										<code>
+											DELETE /api/client_review/:615afde1c64218212a26d9c9
+										</code>
+									</div>
+									<br>
+									<p>Response:</p>
+									<div>
+										<code>
+											{<br>
+											"msg": "Client Review removed"<br>
+											}
+
+										</code>
+									</div>
+								</div>
+							</div>
+
+
+
+
+							<div>
+								<div>
+									<h2>Chat</h2>
+									<div>
+										<h3>Get All Chats</h3>
+										<p><b>GET /api/chats</b></p>
+										<p>Get all chats Review.</p>
+
+										<p>Request</p>
+										<ul>
+											<li>Method: GET</li>
+											<li>URL: /api/chats</li>
+											<li>Authentication: Required</li>
+										</ul>
+										<p><b>Response Codes:</b></p>
+										<div class="table-responsive">
+											<table class="table table-striped">
+												<tr>
+													<td>HTTP Code</td>
+													<td>Description</td>
+												</tr>
+												<tr>
+													<td>200</td>
+													<td>Successful</td>
+												</tr>
+												<tr>
+													<td>404</td>
+													<td>User not found</td>
+												</tr>
+												<tr>
+													<td>500</td>
+													<td>Server error</td>
+												</tr>
+
+											</table>
+										</div><br>
+										<p>Response</p>
+										<ul>
+											<li>Status Code: 200 OK</li>
+											<li>Content: JSON object</li>
+										</ul>
+
+										<p><b>Example Response</b></p>
+										<div>
+											<code>
+												{<br>
+												"_id": "64586890c521e0761b643030",<br>
+												"creator": "visitor",<br>
+												"participant": "admin",<br>
+												"createdAt": "2023-05-08T03:12:16.312Z",<br>
+												"updatedAt": "2023-05-08T03:12:16.312Z",<br>
+												"__v": 0,<br>
+												"lastMessage": {<br>
+												"_id": "64586890c521e0761b643032",<br>
+												"conversation_id": "64586890c521e0761b643030",<br>
+												"sender": "admin",<br>
+												"receiver": "visitor",<br>
+												"text": "Hey! How can I help you?",<br>
+												"isVisitorSeen": false,<br>
+												"isAdminSeen": true,<br>
+												"createdAt": "2023-05-08T03:12:16.510Z",<br>
+												"updatedAt": "2023-05-08T03:12:16.510Z",<br>
+												"__v": 0 <br>
+												},<br>
+												"adminUnseenCount": 0 <br>
+												},<br>
+												......
+											</code>
+										</div>
+										<br>
+									</div>
+								</div>
+
+
+								<div>
+
+									<div>
+										<h3>Create a new chat</h3>
+										<p><b>POST /api/chats</b></p>
+										<p>Get new chat</p>
+
+										<p>Request</p>
+										<ul>
+											<li>Method: POST</li>
+											<li>URL:/api/chats</li>
+											<li>Authentication: Required</li>
+										</ul>
+										<p>Response</p>
+										<ul>
+											<li>Status Code: 200 OK</li>
+											<li>Content: JSON object</li>
+										</ul>
+										<p>Example request:</p>
+										<div>
+											<code>POST /api/chats</code>
+										</div>
+
+										<p><b>Example Response</b></p>
+										<div>
+											<code>
+												{<br>
+												"conversation_id": "645879a1c521e0761b6433eb",<br>
+												"sender": "admin",<br>
+												"receiver": "visitor",<br>
+												"text": "Hey! How can I help you?",<br>
+												"isVisitorSeen": false,<br>
+												"isAdminSeen": true,<br>
+												"_id": "645879a1c521e0761b6433ed",<br>
+												"createdAt": "2023-05-08T04:25:05.405Z",<br>
+												"updatedAt": "2023-05-08T04:25:05.405Z",<br>
+												"__v": 0 <br>
+												}
+											</code>
+										</div>
+										<br>
+									</div>
+								</div>
+
+
+								<br>
+								<div>
+									<h3>Unread message</h3>
+									<p><b>GET /api/chats/totalAdminUnseen</b></p>
+									<p>Get total unread messages for admin</p>
+									<p>Request</p>
+									<ul>
+										<li>Method: GET</li>
+										<li>URL:/api/chat/totalAdminUnseen</li>
+									</ul>
+									<p><b>Response Codes:</b></p>
+									<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<td>HTTP Code</td>
+												<td>Description</td>
+											</tr>
+											<tr>
+												<td>200</td>
+												<td>Successful</td>
+											</tr>
+											<tr>
+												<td>404</td>
+												<td>User not found</td>
+											</tr>
+											<tr>
+												<td>500</td>
+												<td>Server error</td>
+											</tr>
+
+										</table>
+									</div><br>
+									<p>Example request:</p>
+									<div>
+										<code>
+											POST /api/chats/totalAdminUnseen
+										</code>
+									</div>
+									<br>
+									<p>Example response:</p>
+									<div>
+										<code>
+											{<br>
+											"count": 2 <br>
+											}
+										</code>
+									</div>
+								</div>
+								<br>
+								<div>
+									<h3>Get messages</h3>
+									<p>Get messages for a chat by ID</p>
+									<p><b>Request:</b></p>
+									<ul>
+										<li>Method: GET</li>
+										<li>URL: /api/chats/:conversationId/messages</li>
+										<li>URL Parameters:
+											<ul>
+												<li>id (required): The unique identifier of the chat to remove.</li>
+											</ul>
+										</li>
+										<li>Headers: None</li>
+										<li>Body: None</li>
+									</ul>
+
+									<p><b>Response Codes:</b></p>
+									<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<td>HTTP Code</td>
+												<td>Description</td>
+											</tr>
+											<tr>
+												<td>200</td>
+												<td>Successful</td>
+											</tr>
+											<tr>
+												<td>404</td>
+												<td>User not found</td>
+											</tr>
+											<tr>
+												<td>500</td>
+												<td>Server error</td>
+											</tr>
+
+										</table>
+									</div><br>
+
+									<p><b>Example</b></p>
+									<p>Request:</p>
+									<div>
+										<code>
+											api/chats/645879a1c521e0761b6433eb/messages
+										</code>
+									</div>
+									<br>
+									<p>Response:</p>
+									<div>
+										<code>
+											{<br>
+											"_id": "645879a1c521e0761b6433ed", <br>
+											"conversation_id": <br> "645879a1c521e0761b6433eb", <br>
+											"sender": "admin",<br>
+											"receiver": "visitor",<br>
+											"text": "Hey! How can I help you?",<br>
+											"isVisitorSeen": false,<br>
+											"isAdminSeen": true,<br>
+											"createdAt": "2023-05-08T04:25:05.405Z",<br>
+											"updatedAt": "2023-05-08T04:25:05.405Z",<br>
+											"__v": 0 <br>
+											}
+										</code>
+									</div>
+								</div>
+
+								<div>
+									<h3>Get messages admin</h3>
+									<p>Get messages for a chat by ID in admin side</p>
+									<p><b>Request:</b></p>
+									<ul>
+										<li>Method: GET</li>
+										<li>URL: /api/chats/:conversationId/messages/admin</li>
+										<li>URL Parameters:
+											<ul>
+												<li>id (required): The unique identifier of the chat to remove.</li>
+											</ul>
+										</li>
+										<li>Headers: None</li>
+										<li>Body: None</li>
+									</ul>
+									<p><b>Response Codes:</b></p>
+									<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<td>HTTP Code</td>
+												<td>Description</td>
+											</tr>
+											<tr>
+												<td>200</td>
+												<td>Successful</td>
+											</tr>
+											<tr>
+												<td>404</td>
+												<td>User not found</td>
+											</tr>
+											<tr>
+												<td>500</td>
+												<td>Server error</td>
+											</tr>
+
+										</table>
+									</div><br>
+									<p><b>Example</b></p>
+									<p>Request:</p>
+									<div>
+										<code>
+											api/chats/645879a1c521e0761b6433eb/messages/admin
+										</code>
+									</div>
+									<br>
+									<p>Response:</p>
+									<div>
+										<code>
+											{<br>
+											"_id": "645879a1c521e0761b6433ed", <br>
+											"conversation_id": <br> "645879a1c521e0761b6433eb", <br>
+											"sender": "admin",<br>
+											"receiver": "visitor",<br>
+											"text": "Hey! How can I help you?",<br>
+											"isVisitorSeen": false,<br>
+											"isAdminSeen": true,<br>
+											"createdAt": "2023-05-08T04:25:05.405Z",<br>
+											"updatedAt": "2023-05-08T04:25:05.405Z",<br>
+											"__v": 0 <br>
+											}
+										</code>
+									</div>
+								</div>
+
+								<div>
+									<h3>Add a messages</h3>
+									<p>Add a new massage from user</p>
+									<p><b>Request:</b></p>
+									<ul>
+										<li>Method: POST</li>
+										<li>URL: /api/chats/:conversationId/messages</li>
+										<li>URL Parameters:
+											<ul>
+												<li>id (required): The unique identifier to get new massage from user.
+												</li>
+											</ul>
+										</li>
+									</ul>
+									<p><b>Response Codes:</b></p>
+									<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<td>HTTP Code</td>
+												<td>Description</td>
+											</tr>
+											<tr>
+												<td>200</td>
+												<td>Successful</td>
+											</tr>
+											<tr>
+												<td>404</td>
+												<td>User not found</td>
+											</tr>
+											<tr>
+												<td>500</td>
+												<td>Server error</td>
+											</tr>
+
+										</table>
+									</div><br>
+									<p><b>Example</b></p>
+									<p>Request:</p>
+									<div>
+										<code>
+											api/chats/645879a1c521e0761b6433eb/messages <br>
+											{<br>
+											"text": "What's up?" <br>
+											}
+										</code>
+									</div>
+									<br>
+									<p>Response:</p>
+									<div>
+										<code>
+											{<br>
+											"conversation_id": <br> "645879a1c521e0761b6433eb", <br>
+											"sender": "visitor", <br>
+											"receiver": "admin", <br>
+											"text": "What's up?", <br>
+											"isVisitorSeen": true, <br>
+											"isAdminSeen": false, <br>
+											"_id": "645889cec521e0761b6440b1", <br>
+											"createdAt": "2023-05-08T05:34:06.663Z", <br>
+											"updatedAt": "2023-05-08T05:34:06.663Z", <br>
+											"__v": 0 <br>
+											}
+										</code>
+									</div>
+								</div>
+
+
+								<div>
+									<h3>Add a messages </h3>
+									<p>Add a new massage from admin</p>
+									<p><b>Request:</b></p>
+									<ul>
+										<li>Method: POST</li>
+										<li>URL: /api/chats/:conversationId/reply</li>
+										<li>URL Parameters:
+											<ul>
+												<li>id (required): The unique identifier to get new massage from user.
+												</li>
+											</ul>
+										</li>
+									</ul>
+									<p><b>Response Codes:</b></p>
+									<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<td>HTTP Code</td>
+												<td>Description</td>
+											</tr>
+											<tr>
+												<td>200</td>
+												<td>Successful</td>
+											</tr>
+											<tr>
+												<td>404</td>
+												<td>User not found</td>
+											</tr>
+											<tr>
+												<td>500</td>
+												<td>Server error</td>
+											</tr>
+
+										</table>
+									</div><br>
+									<p><b>Example</b></p>
+									<p>Request:</p>
+									<div>
+										<code>
+											api/chats/645879a1c521e0761b6433eb/reply <br>
+											{<br>
+											"text": "I am Good and you?" <br>
+											}
+										</code>
+									</div>
+									<br>
+									<p>Response:</p>
+									<div>
+										<code>
+											{<br>
+											"conversation_id": <br> "645879a1c521e0761b6433eb", <br>
+											"sender": "visitor", <br>
+											"receiver": "admin", <br>
+											"text": "I am Good and you?", <br>
+											"isVisitorSeen": true, <br>
+											"isAdminSeen": false, <br>
+											"_id": "645889cec521e0761b6440b1", <br>
+											"createdAt": "2023-05-08T05:34:06.663Z", <br>
+											"updatedAt": "2023-05-08T05:34:06.663Z", <br>
+											"__v": 0 <br>
+											}
+										</code>
+									</div>
+								</div>
+
+								<div>
+									<h3>Conversation Delete</h3>
+									<p>Remove a Conversation with the specified ID from the database.</p>
+									<p><b>Request:</b></p>
+									<ul>
+										<li>HTTP Method: DELETE</li>
+										<li>URL: /api/chats/:conversationId</li>
+										<li>URL Parameters:
+											<ul>
+												<li>id (required): The unique identifier of the Chat to remove.</li>
+											</ul>
+										</li>
+										<li>Headers: None</li>
+										<li>Body: None</li>
+									</ul>
+									<p><b>Response Codes:</b></p>
+									<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<td>HTTP Code</td>
+												<td>Description</td>
+											</tr>
+											<tr>
+												<td>200</td>
+												<td>Successful</td>
+											</tr>
+											<tr>
+												<td>404</td>
+												<td>User not found</td>
+											</tr>
+											<tr>
+												<td>500</td>
+												<td>Server error</td>
+											</tr>
+
+										</table>
+									</div><br>
+									<p><b>Example</b></p>
+									<p>Request:</p>
+									<div>
+										<code>
+											DELETE /api/chats/615afde1c64218212a26d9c9
+										</code>
+									</div>
+									<br>
+									<p>Response:</p>
+									<div>
+										<code>
+											{<br>
+											"msg": "Chat removed"<br>
+											}
+
+										</code>
+									</div>
+								</div>
+								<h2>Job Routes</h2><br>
+								<h3>GET</h3>
+								<p><b>Endpoint: </b>/api/job</p>
+								<p><b>Description: </b>Retrieves a paginated list of all jobs in the database.</p>
+								<p><b>Request type: </b>GET</p>
+								<p><b>Response type: </b>JSON</p>
+								<p><b>Request Parameters: </b>
+									<ul>
+										<li>
+											<p><b>page </b> (optional, default=1): The page number to retrieve.</p>
+										</li>
+										<li>
+											<p><b>limit </b>(optional, default=10): The number of jobs to retrieve per
+												page.</p>
+										</li>
+									</ul>
+								</p>
+								<p><b>Response Parameters: </b>
+									<ul>
+										<li>
+											<p><b>totalJobs: </b>The total number of jobs in the database.</p>
+										</li>
+										<li>
+											<p><b>totalPages: </b>The total number of pages based on the limit and
+												totalJobs.
+											</p>
+										</li>
+										<li>
+											<p><b>currentPage: </b>The current page number based on the page parameter.
+											</p>
+										</li>
+										<li>
+											<p><b>jobs: </b> An array of job objects, representing the jobs retrieved
+												based on
+												the pagination parameters.</p>
+										</li>
+									</ul>
+								</p>
+								<b>Example Request:</b>
+								<code><br>
+									{<br>
+									GET /api/jobs?page=2&limit=20<br>
+									}</code><br><br>
+								<b>Example Response:</b>
+								<code><br>
+									{<br>
+									{<br>
+									"totalJobs": 4,<br>
+									"totalPages": 1,<br>
+									"currentPage": 1,<br>
+									"jobs": [<br>
+									{<br>
+									"salary": {<br>
+									"min": 20000,<br>
+									"max": 100000<br>
+									},<br>
+									"_id": "64158949b3b2cd6033c7693b",<br>
+									"title": "Full Stack Developer",<br>
+									"company": "DotpotiT",<br>
+									"location": "Mirpur",<br>
+									"description": "GEICO is seeking an experienced Mid/Senior Engineers with a passion
+									for building high performance, low-latency platforms and applications. You will help
+									drive our insurance business transformation as we redefine experience for our
+									customers. Our Mid/Senior Engineer is a key member of the engineering staff working
+									across Business Services Engineering, Data Engineering, Platform Engineering, and
+									Infrastructure Engineering to ensure that we provide a fiction-less experience to
+									our customers, maintain the highest standards of protection and availability. Our
+									team thrives and succeeds in delivering high quality technology products and
+									services in a hyper-growth environment where priorities shift quickly. The ideal
+									candidate has broad and deep technical knowledge, typically ranging from front-end
+									UIs through back-end systems and all points in between.",<br>
+									"responsibilities": [<br>
+									"Manage the complete software development process from conception to
+									deployment.",<br>
+									"Scope, design, implement and unit test frontend features for new and existing web
+									applications.",<br>
+									"Design data driven Restful APIs that orchestrates between frontend and backend
+									mircoservices.",<br>
+									"Build product definition and leverage your technical skills to drive towards the
+									right solution.",<br>
+									"Engage in cross-functional collaboration throughout the entire software
+									lifecycle.",<br>
+									"Lead in design sessions and code reviews with peers to elevate the quality of
+									engineering across the organization.",<br>
+									"Define, create and support reusable application components/patterns from a business
+									and technology perspective.",<br>
+									"Mentor other engineers.",<br>
+									"Consistently share best practices and improve processes within and across
+									teams."<br>
+									],<br>
+									"qualifications": [<br>
+									"Advanced programming experience with Typescript, ES6+, ReactJS, Redux and
+									Jest",<br>
+									"Advanced understanding of micro-frontend architecture with client side composition
+									methods",<br>
+									"Experience building the architecture and design (architecture, design patterns,
+									reliability and scaling) of new and current systems",<br>
+									"Understanding of existing Monitoring Portals: Splunk or Application Insights"<br>
+									],<br>
+									"experience": [<br>
+									"2-5+ years of professional software development experience",<br>
+									"2-3+ years of experience with architecture and design"<br>
+									],<br>
+									"education": [<br>
+									"Bachelor’s degree in Computer Science, Information Systems, or equivalent education
+									or work experience"<br>
+									],<br>
+									"howToApply": "Please send your resume and cover letter to careers@acme.com",<br>
+									"benefits": [<br>
+									"Health insurance",<br>
+									"401k plan",<br>
+									" Flexible work schedule"<br>
+									],<br>
+									"isRemote": true,<br>
+									"isFullTime": true,<br>
+									"createdAt": "2023-03-18T09:50:01.308Z",<br>
+									"updatedAt": "2023-04-08T07:30:48.401Z",<br>
+									"__v": 0<br>
+									}<br>...
+									]<br>
+									}<br>
+									}</code><br><br>
+								<p><b>HTTP status codes:</b>
+									<ul>
+										<li>200 OK: The request was successful and the jobs were retrieved.</li>
+										<li>500 Internal Server Error: There was an error retrieving the jobs from the
+											database.
+										</li>
+									</ul>
+								</p>
+
+								<h3>Get By ID</h3>
+								<p><b>Endpoint: </b>/api/job/:id</p>
+								<p><b>Description: </b>Retrieves a single job by its unique identifier.</p>
+								<p><b>Request type: </b>GET</p>
+								<p><b>Response type: </b>JSON</p>
+								<p><b>Request Parameters: </b>
+									<ul>
+										<li>
+											<p><b>id: </b>The unique identifier of the job to retrieve.</p>
+										</li>
+									</ul>
+								</p>
+								<p><b>Response Parameters: </b>
+									<ul>
+										<li>
+											<p>A job object representing the job with the specified identifier.</p>
+										</li>
+									</ul>
+								</p>
+								<b>Example Request:</b>
+								<code>{<br>
+									GET /api/jobs/64158949b3b2cd6033c7693b<br>
+									}</code><br><br>
+								<b>Example Response:</b>
+								<code>{<br>
+									{<br>
+									"salary": {<br>
+									"min": 20000,<br>
+									"max": 100000<br>
+									},<br>
+									"_id": "64158949b3b2cd6033c7693b",<br>
+									"title": "Full Stack Developer",<br>
+									"company": "DotpotiT",<br>
+									"location": "Mirpur",<br>
+									"description": "GEICO is seeking an experienced Mid/Senior Engineers with a passion
+									for building high performance, low-latency platforms and applications. You will help
+									drive our insurance business transformation as we redefine experience for our
+									customers. Our Mid/Senior Engineer is a key member of the engineering staff working
+									across Business Services Engineering, Data Engineering, Platform Engineering, and
+									Infrastructure Engineering to ensure that we provide a fiction-less experience to
+									our customers, maintain the highest standards of protection and availability. Our
+									team thrives and succeeds in delivering high quality technology products and
+									services in a hyper-growth environment where priorities shift quickly. The ideal
+									candidate has broad and deep technical knowledge, typically ranging from front-end
+									UIs through back-end systems and all points in between.",<br>
+									"responsibilities": [<br>
+									"Manage the complete software development process from conception to
+									deployment.",<br>
+									"Scope, design, implement and unit test frontend features for new and existing web
+									applications.",<br>
+									"Design data driven Restful APIs that orchestrates between frontend and backend
+									mircoservices.",<br>
+									"Build product definition and leverage your technical skills to drive towards the
+									right solution.",<br>
+									"Engage in cross-functional collaboration throughout the entire software
+									lifecycle.",<br>
+									"Lead in design sessions and code reviews with peers to elevate the quality of
+									engineering across the organization.",<br>
+									"Define, create and support reusable application components/patterns from a business
+									and technology perspective.",<br>
+									"Mentor other engineers.",
+									"Consistently share best practices and improve processes within and across
+									teams."<br>
+									],<br>
+									"qualifications": [<br>
+									"Advanced programming experience with Typescript, ES6+, ReactJS, Redux and
+									Jest",<br>
+									"Advanced understanding of micro-frontend architecture with client side composition
+									methods",<br>
+									"Experience building the architecture and design (architecture, design patterns,
+									reliability and scaling) of new and current systems",<br>
+									"Understanding of existing Monitoring Portals: Splunk or Application Insights"<br>
+									],<br>
+									"experience": [<br>
+									"2-5+ years of professional software development experience",<br>
+									"2-3+ years of experience with architecture and design"<br>
+									],<br>
+									"education": [<br>
+									"Bachelor’s degree in Computer Science, Information Systems, or equivalent education
+									or work experience"<br>
+									],<br>
+									"howToApply": "Please send your resume and cover letter to careers@acme.com",<br>
+									"benefits": [<br>
+									"Health insurance",<br>
+									"401k plan",<br>
+									" Flexible work schedule"<br>
+									],
+									"isRemote": true,<br>
+									"isFullTime": true,<br>
+									"createdAt": "2023-03-18T09:50:01.308Z",<br>
+									"updatedAt": "2023-04-08T07:30:48.401Z",<br>
+									"__v": 0<br>
+									}<br>
+									}</code><br><br>
+								<p><b>HTTP status codes:</b>
+									<ul>
+										<li>200 OK: The request was successful and the job was retrieved.</li>
+										<li>404 Not Found: The specified job identifier does not exist in the database.
+										</li>
+										<li>500 Internal Server Error: There was an error retrieving the job from the
+											database.
+										</li>
+									</ul>
+								</p>
+
+								<h3>POST</h3>
+								<p><b>Endpoint: </b>/api/job</p>
+								<p><b>Description: </b> Creates a new job in the database.</p>
+								<p><b>Request type: </b>POST</p>
+								<p><b>Response type: </b>JSON</p>
+								<p><b>Request Parameters: </b>
+									<ul>
+										<li>
+											<p><b>title: </b>The title of the job (required).</p>
+										</li>
+										<li>
+											<p><b>company: </b>The name of the company offering the job (required).</p>
+										</li>
+										<li>
+											<p><b>location: </b>The location of the job (required).</p>
+										</li>
+										<li>
+											<p><b>salary: </b>The salary offered for the job (optional).</p>
+										</li>
+										<li>
+											<p><b>description: </b>A description of the job (optional).</p>
+										</li>
+									</ul>
+								</p>
+								<p><b>Response Parameters: </b>
+									<ul>
+										<li>
+											<p>The newly created job object, including its unique identifier.</p>
+										</li>
+									</ul>
+								</p>
+								<b>Example Request:</b>
+								<code>{<br>
+									POST /api/jobs<br>
+									}</code><br><br>
+								<b>Example Response:</b>
+								<code>{<br>
+									{<br>
+									"salary": {<br>
+									"min": 20000,<br>
+									"max": 100000<br>
+									},<br>
+									"title": "Full Stack Developer",<br>
+									"company": "DotpotiT",<br>
+									"location": "Mirpur",<br>
+									"description": "GEICO is seeking an experienced Mid/Senior Engineers with a passion
+									for building high performance, low-latency platforms and applications. You will help
+									drive our insurance business transformation as we redefine experience for our
+									customers. Our Mid/Senior Engineer is a key member of the engineering staff working
+									across Business Services Engineering, Data Engineering, Platform Engineering, and
+									Infrastructure Engineering to ensure that we provide a fiction-less experience to
+									our customers, maintain the highest standards of protection and availability. Our
+									team thrives and succeeds in delivering high quality technology products and
+									services in a hyper-growth environment where priorities shift quickly. The ideal
+									candidate has broad and deep technical knowledge, typically ranging from front-end
+									UIs through back-end systems and all points in between.",<br>
+									"responsibilities": [<br>
+									"Manage the complete software development process from conception to
+									deployment.",<br>
+									"Scope, design, implement and unit test frontend features for new and existing web
+									applications.",<br>
+									"Design data driven Restful APIs that orchestrates between frontend and backend
+									mircoservices.",<br>
+									"Build product definition and leverage your technical skills to drive towards the
+									right solution.",<br>
+									"Engage in cross-functional collaboration throughout the entire software
+									lifecycle.",<br>
+									"Lead in design sessions and code reviews with peers to elevate the quality of
+									engineering across the organization.",<br>
+									"Define, create and support reusable application components/patterns from a business
+									and technology perspective.",<br>
+									"Mentor other engineers.",
+									"Consistently share best practices and improve processes within and across
+									teams."<br>
+									],<br>
+									"qualifications": [<br>
+									"Advanced programming experience with Typescript, ES6+, ReactJS, Redux and
+									Jest",<br>
+									"Advanced understanding of micro-frontend architecture with client side composition
+									methods",<br>
+									"Experience building the architecture and design (architecture, design patterns,
+									reliability and scaling) of new and current systems",<br>
+									"Understanding of existing Monitoring Portals: Splunk or Application Insights"<br>
+									],<br>
+									"experience": [<br>
+									"2-5+ years of professional software development experience",<br>
+									"2-3+ years of experience with architecture and design"<br>
+									],<br>
+									"education": [<br>
+									"Bachelor’s degree in Computer Science, Information Systems, or equivalent education
+									or work experience"<br>
+									],<br>
+									"howToApply": "Please send your resume and cover letter to careers@acme.com",<br>
+									"benefits": [<br>
+									"Health insurance",<br>
+									"401k plan",<br>
+									" Flexible work schedule"<br>
+									],
+									"isRemote": true,<br>
+									"isFullTime": true,<br>
+									}<br>
+									}</code><br><br>
+								<p><b>HTTP status codes:</b>
+									<ul>
+										<li>200 OK: The request was successful and the job was created.</li>
+										<li>400 Bad Request: The request body was invalid or incomplete.</li>
+										<li>500 Internal Server Error: There was an error creating the job in the
+											database.</li>
+									</ul>
+								</p>
+
+								<h3>PUT</h3>
+								<p><b>Endpoint: </b>/api/job/:id</p>
+								<p><b>Description: </b>Updates a job in the database with the specified ID.</p>
+								<p><b>Request type: </b>PUT</p>
+								<p><b>Response type: </b>JSON</p>
+								<p><b>Request Parameters: </b>
+									<ul>
+										<li>
+											<p><b>id: </b>The unique identifier of the job to update.</p>
+										</li>
+									</ul>
+								</p>
+								<p><b>Response Parameters: </b>
+									<ul>
+										<li>
+											<p>The updated job object, including its unique identifier.</p>
+										</li>
+										<li>
+										</li>
+									</ul>
+								</p>
+								<b>Example Request:</b>
+								<code><br>
+									{<br>
+									PUT /api/jobs/64158949b3b2cd6033c7693b<br>
+									}</code><br><br>
+								<b>Example Response:</b>
+								<code><br>
+									{<br>
+									{<br>
+									"salary": {<br>
+									"min": 20000,<br>
+									"max": 100000<br>
+									},<br>
+									"title": "Full Stack Developer",<br>
+									"company": "DotpotiT",<br>
+									"location": "Mirpur",<br>
+									"description": "GEICO is seeking an experienced Mid/Senior Engineers with a passion
+									for building high performance, low-latency platforms and applications. You will help
+									drive our insurance business transformation as we redefine experience for our
+									customers. Our Mid/Senior Engineer is a key member of the engineering staff working
+									across Business Services Engineering, Data Engineering, Platform Engineering, and
+									Infrastructure Engineering to ensure that we provide a fiction-less experience to
+									our customers, maintain the highest standards of protection and availability. Our
+									team thrives and succeeds in delivering high quality technology products and
+									services in a hyper-growth environment where priorities shift quickly. The ideal
+									candidate has broad and deep technical knowledge, typically ranging from front-end
+									UIs through back-end systems and all points in between.",<br>
+									"responsibilities": [<br>
+									"Manage the complete software development process from conception to
+									deployment.",<br>
+									"Scope, design, implement and unit test frontend features for new and existing web
+									applications.",<br>
+									"Design data driven Restful APIs that orchestrates between frontend and backend
+									mircoservices.",<br>
+									"Build product definition and leverage your technical skills to drive towards the
+									right solution.",<br>
+									"Engage in cross-functional collaboration throughout the entire software
+									lifecycle.",<br>
+									"Lead in design sessions and code reviews with peers to elevate the quality of
+									engineering across the organization.",<br>
+									"Define, create and support reusable application components/patterns from a business
+									and technology perspective.",<br>
+									"Mentor other engineers.",
+									"Consistently share best practices and improve processes within and across
+									teams."<br>
+									],<br>
+									"qualifications": [<br>
+									"Advanced programming experience with Typescript, ES6+, ReactJS, Redux and
+									Jest",<br>
+									"Advanced understanding of micro-frontend architecture with client side composition
+									methods",<br>
+									"Experience building the architecture and design (architecture, design patterns,
+									reliability and scaling) of new and current systems",<br>
+									"Understanding of existing Monitoring Portals: Splunk or Application Insights"<br>
+									],<br>
+									"experience": [<br>
+									"2-5+ years of professional software development experience",<br>
+									"2-3+ years of experience with architecture and design"<br>
+									],<br>
+									"education": [<br>
+									"Bachelor’s degree in Computer Science, Information Systems, or equivalent education
+									or work experience"<br>
+									],<br>
+									"howToApply": "Please send your resume and cover letter to careers@acme.com",<br>
+									"benefits": [<br>
+									"Health insurance",<br>
+									"401k plan",<br>
+									" Flexible work schedule"<br>
+									],
+									"isRemote": true,<br>
+									"isFullTime": true,<br>
+									}<br>
+									}</code><br><br>
+								<p><b>HTTP status codes:</b>
+									<ul>
+										<li>200 OK: The request was successful and the job was updated.</li>
+										<li>400 Bad Request: The request body was invalid or incomplete.</li>
+										<li>404 Not Found: The job with the specified ID could not be found.</li>
+										<li>500 Internal Server Error: There was an error updating the job in the
+											database.</li>
+									</ul>
+								</p>
+
+								<h3>DELETE</h3>
+								<p><b>Endpoint: </b>/api/job/:id</p>
+								<p><b>Description: </b>Deletes a job by its ID.</p>
+								<p><b>Request type: </b>DELETE</p>
+								<p><b>Response type: </b>JSON</p>
+								<p><b>Request Parameters: </b>
+									<ul>
+										<li>
+											<p><b>id: </b>The ID of the job to delete.</p>
+										</li>
+									</ul>
+								</p>
+								<p><b>Response Parameters: </b>
+									<ul>
+										<li>
+											<p>The deleted job object, including its unique identifier.</p>
+										</li>
+									</ul>
+								</p>
+								<b>Example Request:</b>
+								<code><br>
+									{<br>
+									DELETE /api/jobs/64158949b3b2cd6033c7693b<br>
+									}</code><br><br>
+								<b>Example Response:</b>
+								<code><br>
+									{<br>
+									"msg": "Job removed"<br>
+									}
+								</code><br><br>
+								<p><b>HTTP status codes:</b>
+									<ul>
+										<li>200: If the job is successfully deleted.</li>
+										<li>404: If the job with the specified ID is not found.</li>
+										<li>500: If there is a server error.</li>
+									</ul>
+								</p>
+
+								<h2>Job Application Routes</h2><br>
+								<h3>GET</h3>
+								<p><b>Endpoint: </b>/api/job_application</p>
+								<p><b>Description: </b>This endpoint retrieves all job applications from the database.
+								</p>
+								<p><b>Request type: </b>GET</p>
+								<p><b>Response type: </b>JSON</p>
+								<p><b>Request Parameters: </b>
+									<ul>
+										<li>
+											<p><b>page </b>The current page number (optional, default = 1)</p>
+										</li>
+										<li>
+											<p><b>limit </b>The number of job applications to display per page
+												(optional,
+												default = 10)</p>
+										</li>
+									</ul>
+								</p>
+								<p><b>Response Parameters: </b>
+									<ul>
+										<li>
+											<p><b>applications: </b>The total number of job applications in the
+												database.</p>
+										</li>
+										<li>
+											<p><b>totalPages: </b>The total number of pages of job applications based on
+												the
+												limit and total number of job applications.</p>
+										</li>
+										<li>
+											<p><b>currentPage: </b>The current page number.</p>
+										</li>
+										<li>
+											<p><b>JobApplications: </b>An array of job applications for the current
+												page.</p>
+										</li>
+									</ul>
+								</p>
+								<b>Example Request:</b>
+								<code><br>
+									{<br>
+									GET /api/job_application?page=2&limit=20<br>
+									}</code><br><br>
+								<b>Example Response:</b>
+								<code><br>
+									{<br>
+									{<br>
+									"applications": 3,<br>
+									"totalPages": 1,<br>
+									"currentPage": 1,<br>
+									"JobApplications": [<br>
+									{<br>
+									"_id": "643e2b638cbff16e9b367b24",<br>
+									"jobId": "64158b4ab3b2cd6033c7696a",<br>
+									"companyName": "Dotpot iT",<br>
+									"jobTitle": "Frontend Developer",<br>
+									"name": "Sujat",<br>
+									"email": "sujat@gmail.com",<br>
+									"phone": "01406680846",<br>
+									"resume": "uploads/resumes/file-sample_100kb-1681795939041.doc",<br>
+									"address": "Mirpur 10, Dhaka",<br>
+									"education": "BSC",<br>
+									"experience": "Fresher",<br>
+									"coverLetter": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
+									doloribus?",<br>
+									"socialMediaUrls": {},<br>
+									"createdAt": "2023-04-18T05:32:19.173Z",<br>
+									"updatedAt": "2023-04-18T05:32:19.173Z",<br>
+									"__v": 0<br>
+									}<br>...
+									]<br>
+									}<br>
+									}</code><br><br>
+								<p><b>HTTP status codes:</b>
+									<ul>
+										<li>200: Success.</li>
+										<li>500: Server error.</li>
+									</ul>
+								</p>
+
+								<h3>Get By ID</h3>
+								<p><b>Endpoint: </b>/api/job_application/:id</p>
+								<p><b>Description: </b>This endpoint retrieves all job applications from the database.
+								</p>
+								<p><b>Request type: </b>GET</p>
+								<p><b>Response type: </b>JSON</p>
+								<p><b>Request Parameters: </b>
+									<ul>
+										<li>
+											<p><b>id: </b> (required): The ID of the job application to retrieve.</p>
+										</li>
+									</ul>
+								</p>
+								<p><b>Response Parameters: </b>
+									<ul>
+										<li>
+											<p><b>success: </b>A boolean indicating whether the request was successful
+												or not.
+											</p>
+										</li>
+										<li>
+											<p><b>data: </b>The job application data, if the request was successful.</p>
+										</li>
+										<li>
+											<p><b>error: </b>An error message, if the request was unsuccessful.</p>
+										</li>
+									</ul>
+								</p>
+								<b>Example Request:</b>
+								<code><br>
+									{<br>
+									GET /api/job_application/643e2b638cbff16e9b367b24<br>
+									}</code><br><br>
+								<b>Example Response:</b>
+								<code><br>
+									{<br>
+									{<br>
+									"success": true,<br>
+									"data": {<br>
+									"_id": "643e2b638cbff16e9b367b24",<br>
+									"jobId": "64158b4ab3b2cd6033c7696a",<br>
+									"companyName": "Dotpot iT",<br>
+									"jobTitle": "Frontend Developer",<br>
+									"name": "Sujat",<br>
+									"email": "sujat@gmail.com",<br>
+									"phone": "01406680846",<br>
+									"resume": "uploads/resumes/file-sample_100kb-1681795939041.doc",<br>
+									"address": "Mirpur 10, Dhaka",<br>
+									"education": "BSC",<br>
+									"experience": "Fresher",<br>
+									"coverLetter": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
+									doloribus?",<br>
+									"socialMediaUrls": {},<br>
+									"createdAt": "2023-04-18T05:32:19.173Z",<br>
+									"updatedAt": "2023-04-18T05:32:19.173Z",<br>
+									"__v": 0<br>
+									}<br>
+									}<br>
+									}</code><br><br>
+								<p><b>HTTP status codes:</b>
+									<ul>
+										<li>200: Success.</li>
+										<li>500: Server error.</li>
+									</ul>
+								</p>
+
+								<h3>POST</h3>
+								<p><b>Endpoint: </b>/api/job_application/</p>
+								<p><b>Description: </b>Create a new job application.</p>
+								<p><b>Request type: </b>POST</p>
+								<p><b>Response type: </b>JSON</p>
+								<p><b>Request Parameters: </b>
+									<ul>
+										<li>
+											<p><b>jobId: </b> String (required) - The ID of the job the application is
+												for.</p>
+										</li>
+										<li>
+											<p><b>name: </b>String (required) - The name of the applicant.</p>
+										</li>
+										<li>
+											<p><b>email: </b>String (required) - The email of the applicant.</p>
+										</li>
+										<li>
+											<p><b>phone: </b>String (required) - The phone number of the applicant.</p>
+										</li>
+										<li>
+											<p><b>resume: </b>String (required) - The URL of the applicant's resume.</p>
+										</li>
+										<li>
+											<p><b>coverLetter: </b> String (optional) - The URL of the applicant's cover
+												letter.
+											</p>
+										</li>
+									</ul>
+								</p>
+								<p><b>Response Parameters: </b>
+									<ul>
+										<li>
+											<p><b>success: </b>Boolean - Whether the request was successful or not.</p>
+										</li>
+										<li>
+											<p><b>data: </b>Object - The newly created job application.</p>
+										</li>
+										<li>
+											<p><b>error: </b>String - The error message (if success is false).</p>
+										</li>
+									</ul>
+								</p>
+								<b>Example Request:</b>
+								<code><br>
+									{<br>
+									POST /api/job_application<br>
+									}</code><br><br>
+								<b>Example Response:</b>
+								<code><br>
+									{<br>
+									{<br>
+									"success": true,<br>
+									"data": {<br>
+									"jobId": "64158b4ab3b2cd6033c7696a",<br>
+									"companyName": "Dotpot iT",<br>
+									"jobTitle": "Frontend Developer",<br>
+									"name": "Sujat",<br>
+									"email": "sujat@gmail.com",<br>
+									"phone": "01406680846",<br>
+									"resume": "uploads/resumes/file-sample_100kb-1681795939041.doc",<br>
+									"address": "Mirpur 10, Dhaka",<br>
+									"education": "BSC",<br>
+									"experience": "Fresher",<br>
+									"coverLetter": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
+									doloribus?",<br>
+									"socialMediaUrls": {},<br>
+									}<br>
+									}<br>
+									}</code><br><br>
+								<p><b>HTTP status codes:</b>
+									<ul>
+										<li>201 Created: the job application was successfully created.</li>
+										<li>500 Internal Server Error: an error occurred on the server while processing
+											the
+											request.</li>
+									</ul>
+								</p>
+
+								<h3>PUT</h3>
+								<p><b>Endpoint: </b>/api/job_application/:id</p>
+								<p><b>Description: </b>Update a job application by ID.</p>
+								<p><b>Request type: </b>PUT</p>
+								<p><b>Response type: </b>JSON</p>
+								<p><b>Request Parameters: </b>
+									<ul>
+										<li>
+											<p><b>id: </b>(required) - The ID of the job application to update.</p>
+										</li>
+									</ul>
+								</p>
+								<p><b>Response Parameters: </b>
+									<ul>
+										<li>
+											<p><b>success : </b>A boolean indicating whether the operation was
+												successful or
+												not.</p>
+										</li>
+										<li>
+											<p><b>data: </b>The updated job application object.</p>
+										</li>
+									</ul>
+								</p>
+								<b>Example Request:</b>
+								<code><br>
+									{<br>
+									PUT /api/job_application/643e2b638cbff16e9b367b24<br>
+									}</code><br><br>
+								<b>Example Response:</b>
+								<code><br>
+									{<br>
+									{<br>
+									"success": true,<br>
+									"data": {<br>
+									"jobId": "64158b4ab3b2cd6033c7696a",<br>
+									"companyName": "Dotpot iT",<br>
+									"jobTitle": "Frontend Developer",<br>
+									"name": "Sujat",<br>
+									"email": "sujat@gmail.com",<br>
+									"phone": "01406680846",<br>
+									"resume": "uploads/resumes/file-sample_100kb-1681795939041.doc",<br>
+									"address": "Mirpur 10, Dhaka",<br>
+									"education": "BSC",<br>
+									"experience": "Fresher",<br>
+									"coverLetter": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
+									doloribus?",<br>
+									"socialMediaUrls": {},<br>
+									}<br>
+									}<br>
+									}</code><br><br>
+								<p><b>HTTP status codes:</b>
+									<ul>
+										<li> 404 - If the job application with the given ID is not found.</li>
+										<li>500 - If there is a server error while processing the request.</li>
+									</ul>
+								</p>
+
+								<h3>DELETE</h3>
+								<p><b>Endpoint: </b>/api/job_application/:id</p>
+								<p><b>Description: </b>Deletes a job application by its ID from the database.</p>
+								<p><b>Request type: </b>DELETE</p>
+								<p><b>Response type: </b>JSON</p>
+								<p><b>Request Parameters: </b>
+									<ul>
+										<li>
+											<p><b>id: </b>The ID of the job application to be deleted.</p>
+										</li>
+									</ul>
+								</p>
+								<p><b>Response Parameters: </b>
+									<ul>
+										<li>
+											<p>The deleted job object, including its unique identifier.</p>
+										</li>
+									</ul>
+								</p>
+								<b>Example Request:</b>
+								<code><br>
+									{<br>
+									DELETE /api/job_application/643e2b638cbff16e9b367b24<br>
+									}</code><br><br>
+								<b>Example Response:</b>
+								<code><br>
+									{<br>
+									{<br>
+									{<br>
+									"success": true,<br>
+									"data": {}<br>
+									}<br>
+									}<br>
+									}</code><br><br>
+								<p><b>HTTP status codes:</b>
+									<ul>
+										<li>200 OK: The server successfully updated the job.</li>
+										<li>404 Not Found: The job with the provided id does not exist.</li>
+									</ul>
+								</p>
+
+							</div>
+
+
+							<p>Please note that the actual implementation of this endpoint may vary depending on your
+								specific use case and requirements. This is just an example to help you get started with
+								documenting your API.</p>
 
 						</section>
 						<!--//docs-intro-->
 					</header>
-					<section class="docs-section" id="item-3-1">
-						<h2 class="section-heading">NodeJs</h2>
-						<p> Node.js is known for its ability to handle large volumes of requests and data-intensive
-							applications, making it a popular choice for building scalable and high-performance
-							websites. We have implemented nodeJs to use javascript on both the server-side and
-							client-side of the website to improve the website's responsiveness and overall user
-							experience. </p>
-					</section>
-					
-					<!--//section-->
 				</article>
 				<!--//docs-article-->
 
@@ -571,14 +2928,13 @@
 					<section class="docs-section" id="item-6-1">
 						<div class="simplelightbox-gallery row mb-3">
 							<div class="col-12 col-md-4 mb-3">
-								<a href="assets/images/web_ss/hero.png"><img
-										class="figure-img img-fluid shadow rounded" src="assets/images/web_ss/hero.png"
-										alt="" title="Dotpot Hero Page" /></a>
+								<a href="assets/images/web_ss/hero.png"><img class="figure-img img-fluid shadow rounded"
+										src="assets/images/web_ss/hero.png" alt="" title="Dotpot Hero Page" /></a>
 							</div>
 							<div class="col-12 col-md-4 mb-3">
 								<a href="assets/images/web_ss/about.png"><img
-										class="figure-img img-fluid shadow rounded"
-										src="assets/images/web_ss/about.png" alt="" title="Dotpot About Page" /></a>
+										class="figure-img img-fluid shadow rounded" src="assets/images/web_ss/about.png"
+										alt="" title="Dotpot About Page" /></a>
 							</div>
 							<!--//col-->
 							<div class="col-12 col-md-4 mb-3">
@@ -593,14 +2949,12 @@
 						<!--//gallery-->
 						<div class="simplelightbox-gallery row mb-3">
 							<div class="col-12 col-md-4 mb-3">
-								<a href="assets/images/web_ss/jobs.png"><img
-										class="figure-img img-fluid shadow rounded" src="assets/images/web_ss/jobs.png"
-										alt="" title="Dotpot Job Page" /></a>
+								<a href="assets/images/web_ss/jobs.png"><img class="figure-img img-fluid shadow rounded"
+										src="assets/images/web_ss/jobs.png" alt="" title="Dotpot Job Page" /></a>
 							</div>
 							<div class="col-12 col-md-4 mb-3">
-								<a href="assets/images/web_ss/blog.png"><img
-										class="figure-img img-fluid shadow rounded" src="assets/images/web_ss/blog.png"
-										alt="" title="Dotpot Blog Page" /></a>
+								<a href="assets/images/web_ss/blog.png"><img class="figure-img img-fluid shadow rounded"
+										src="assets/images/web_ss/blog.png" alt="" title="Dotpot Blog Page" /></a>
 							</div>
 							<!--//col-->
 							<div class="col-12 col-md-4 mb-3">
@@ -617,8 +2971,7 @@
 							<div class="col-12 col-md-4 mb-3">
 								<a href="assets/images/web_ss/sign_in.png"><img
 										class="figure-img img-fluid shadow rounded"
-										src="assets/images/web_ss/sign_in.png" alt=""
-										title="Dotpot Sign-in Page" /></a>
+										src="assets/images/web_ss/sign_in.png" alt="" title="Dotpot Sign-in Page" /></a>
 							</div>
 							<div class="col-12 col-md-4 mb-3">
 								<a href="assets/images/web_ss/register.png"><img
@@ -655,12 +3008,14 @@
 							<div class="col-12 col-md-2 mb-3">
 								<a href="assets/images/phone_ss/Screenshot_1.png"><img
 										class="figure-img img-fluid shadow rounded"
-										src="assets/images/phone_ss/Screenshot_1.png" alt="" title="Dotpot Hero Page" /></a>
+										src="assets/images/phone_ss/Screenshot_1.png" alt=""
+										title="Dotpot Hero Page" /></a>
 							</div>
 							<div class="col-12 col-md-2 mb-3">
 								<a href="assets/images/phone_ss/Screenshot_2.png"><img
 										class="figure-img img-fluid shadow rounded"
-										src="assets/images/phone_ss/Screenshot_2.png" alt="" title="Dotpot About Page" /></a>
+										src="assets/images/phone_ss/Screenshot_2.png" alt=""
+										title="Dotpot About Page" /></a>
 							</div>
 							<!--//col-->
 							<div class="col-12 col-md-2 mb-3">
@@ -673,12 +3028,14 @@
 							<div class="col-12 col-md-2 mb-3">
 								<a href="assets/images/phone_ss/Screenshot_4.png"><img
 										class="figure-img img-fluid shadow rounded"
-										src="assets/images/phone_ss/Screenshot_4.png" alt="" title="Dotpot Job Page" /></a>
+										src="assets/images/phone_ss/Screenshot_4.png" alt=""
+										title="Dotpot Job Page" /></a>
 							</div>
 							<div class="col-12 col-md-2 mb-3">
 								<a href="assets/images/phone_ss/Screenshot_5.png"><img
 										class="figure-img img-fluid shadow rounded"
-										src="assets/images/phone_ss/Screenshot_5.png" alt="" title="Dotpot Blog Page" /></a>
+										src="assets/images/phone_ss/Screenshot_5.png" alt=""
+										title="Dotpot Blog Page" /></a>
 							</div>
 							<!--//col-->
 							<div class="col-12 col-md-2 mb-3">
@@ -693,7 +3050,7 @@
 						<!--//gallery-->
 						<div class="simplelightbox-gallery row mb-3">
 							<div class="simplelightbox-gallery row mb-3">
-								
+
 
 								<div class="col-12 col-md-2 mb-3">
 									<a href="assets/images/phone_ss/Screenshot_7.png"><img
@@ -765,26 +3122,44 @@
 						<section class="docs-intro">
 							<ul>
 								<li class="me-1">Create an AWS account if you don't have one already.</li>
-								<li class="me-1">Launch an EC2 instance with the desired specifications, such as the operating system, storage, and network configuration. You can use an Amazon Machine Image (AMI) with pre-installed software, or you can manually install the required software on the instance.</li>
-								<li class="me-1">Set up security groups to manage inbound and outbound traffic to the instance. Ensure that the necessary ports are open for your application to function properly.</li>
-								<li class="me-1">Connect to the instance using SSH or a remote desktop client, depending on your instance's operating system.</li>
-								<li class="me-1">Install PM2 on the instance by running the following command: <code>npm install -g pm2</code> </li>
-								<li class="me-1">Clone the DotpotiT website repository from GitHub onto the instance. <code>git clone https://github.com/DotpotiT/dotpotit.git</code> 
+								<li class="me-1">Launch an EC2 instance with the desired specifications, such as the
+									operating system, storage, and network configuration. You can use an Amazon Machine
+									Image (AMI) with pre-installed software, or you can manually install the required
+									software on the instance.</li>
+								<li class="me-1">Set up security groups to manage inbound and outbound traffic to the
+									instance. Ensure that the necessary ports are open for your application to function
+									properly.</li>
+								<li class="me-1">Connect to the instance using SSH or a remote desktop client, depending
+									on your instance's operating system.</li>
+								<li class="me-1">Install PM2 on the instance by running the following command: <code>npm
+										install -g pm2</code> </li>
+								<li class="me-1">Clone the DotpotiT website repository from GitHub onto the instance.
+									<code>git clone https://github.com/DotpotiT/dotpotit.git</code>
 								</li>
-								<li class="me-1">Go to API and install the necessary dependencies <code>cd api</code> <code>npm install</code> </li>
-								<li class="me-1">Start the API server using PM2. <code>pm2 start npm --name "api" -- start</code> </li>
+								<li class="me-1">Go to API and install the necessary dependencies <code>cd api</code>
+									<code>npm install</code> </li>
+								<li class="me-1">Start the API server using PM2. <code>pm2 start npm --name "api" --
+										start</code> </li>
 								<li class="me-1">
 									<img src="./assets/images/pm2_api_start.png" alt="pm2_api_start" class="img-fluid">
 								</li>
 								<li class="me-1">Serve the client-side application using the nginx.
-									<script src="https://gist.github.com/DotpotProject/91733cc9bc63ab9f0d1ff8e0fef8e866.js"></script>
+									<script
+										src="https://gist.github.com/DotpotProject/91733cc9bc63ab9f0d1ff8e0fef8e866.js">
+									</script>
 								</li>
-								<li class="me-1">Install the necessary dependencies, such as Node.js and other packages required by the application for client. <code>cd client</code> <code>npm install --legacy-peer-deps</code>  </li>
-								<li class="me-1">Build the client-side application using the following command: <code>npm run build</code> </li>
-								<li class="me-1">Serve the Client dist folder using PM2. <code>pm2 start --name "client" "npx serve dist -s -l 5173"
-									<img src="./assets/images/pm2_client_start.png" alt="pm2_client_start" class="img-fluid">
-								</code></li>
-								<li class="me-1">Set up a reverse proxy to route traffic from the web server to the API server running on port 8800.</li>
+								<li class="me-1">Install the necessary dependencies, such as Node.js and other packages
+									required by the application for client. <code>cd client</code> <code>npm install
+										--legacy-peer-deps</code> </li>
+								<li class="me-1">Build the client-side application using the following command:
+									<code>npm run build</code> </li>
+								<li class="me-1">Serve the Client dist folder using PM2. <code>pm2 start --name "client"
+										"npx serve dist -s -l 5173"
+										<img src="./assets/images/pm2_client_start.png" alt="pm2_client_start"
+											class="img-fluid">
+									</code></li>
+								<li class="me-1">Set up a reverse proxy to route traffic from the web server to the API
+									server running on port 8800.</li>
 								<li class="me-1">Test the application to ensure it's functioning as expected.
 								</li>
 								<li class="me-1">
@@ -794,16 +3169,18 @@
 									Configure the DNS records to point to the instance's public IP address.
 								</li>
 								<li class="me-1">
-									Set up SSL/TLS certificates using Amazon Certificate Manager to encrypt traffic to and from the application.
+									Set up SSL/TLS certificates using Amazon Certificate Manager to encrypt traffic to
+									and from the application.
 								</li>
 								<li class="me-1">
-									Finally, monitor the application's performance and security, and make any necessary updates or changes.
+									Finally, monitor the application's performance and security, and make any necessary
+									updates or changes.
 								</li>
 							</ul>
 						</section>
 						<!--//docs-intro-->
 					</header>
-					
+
 				</article>
 				<!--//docs-article-->
 
